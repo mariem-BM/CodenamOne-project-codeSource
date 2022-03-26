@@ -129,5 +129,25 @@ public class ServiceOffre {
         System.out.println(resultOK);
         return resultOK;
     }
+        
+        //update
+         
+      public boolean modifOffre(Offre o) { 
+              
+        String url = Statics.BASE_URL + "/offre/modifOffrejson/"+o.getId()+"?&nom_offre="+o.getNomOffre()+"&description_offre="+o.getDescriptionOffre()+"&prix_offre="+o.getPrixOffre()+"&reduction="+o.getReduction()+"&date_debut_offre="+o.getDateDebutOffre()+"&date_fin_offre="+o.getDateFinOffre();
+//création de l'URL
+       // String url = Statics.BASE_URL + "billet/UpdateBillets/json/" + b.getId();
+        req.setUrl(url);// Insertion de l'URL de notre demande de connexion
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this); //Supprimer cet actionListener       
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        System.out.println(resultOK);
+        return resultOK;
+    }
 
 }
