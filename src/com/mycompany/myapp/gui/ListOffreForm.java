@@ -75,7 +75,7 @@ public class ListOffreForm extends  Form {
         Label labeldate_fin_offre = new Label("Date fin");
         
     //   Label labelEdit = new Label("Edit");
-       // Label labelDelete = new Label("Delete");
+        Label labelSupprimer = new Label("Supprimer");
        
     //    Label labelDetails = new Label("Details");
         
@@ -90,39 +90,39 @@ public class ListOffreForm extends  Form {
         HeadConainter.add(labeldate_fin_offre);
         
       //  HeadConainter.add(labelEdit);
-       // HeadConainter.add(labelDelete);
+        HeadConainter.add(labelSupprimer);
       //  HeadConainter.add(labelDetails);
         
         tempForm.add(HeadConainter);
         
         
-        ArrayList<Offre> Offres = ServiceOffre.getInstance().getAllOffres();
+        ArrayList<Offre> Offres = ServiceOffre.getInstance().displayOffres();
         for (Offre o : Offres) {
             //delete button
-          /*  Label lSupprimer = new Label(" ");
+            Label lSupprimer = new Label(" ");
             lSupprimer.setUIID("NewsTopLine");
             Style supprimerStyle = new Style(lSupprimer.getUnselectedStyle());
             supprimerStyle.setFgColor(0xf21f1f);
             FontImage supprimerImage = FontImage.createMaterial(FontImage.MATERIAL_DELETE, supprimerStyle);
             lSupprimer.setIcon(supprimerImage);
-            lSupprimer.setTextPosition(RIGHT);*/
+            lSupprimer.setTextPosition(RIGHT);
             //click delete icon
-         /*   lSupprimer.addPointerPressedListener(l -> {
+           lSupprimer.addPointerPressedListener(l -> {
 
                 Dialog dig = new Dialog("Suppresion");
 
-                if (dig.show("Suppression", "Voulez vous supprimer l billet ?", "Annuler", "OK")) {
+                if (dig.show("Suppression", "Voulez vous supprimer l'offre ?", "Annuler", "OK")) {
                     dig.dispose();
                 } else {
                     dig.dispose();
-                }*/
+                }
 
                 // appel de la fonction delete du service Experience
-             /*   if (ServiceOffre.getInstance().deleteBillet(o)) {
+                if (ServiceOffre.getInstance().deleteOffre(o)) {
 
                     new ListOffreForm(current);
                 }
-            });*/
+            });
             //update Button
          /*   Label lModifier = new Label(" ");
             lModifier.setUIID("NewsTopLine");
@@ -167,8 +167,8 @@ public class ListOffreForm extends  Form {
             BodyConainter.add(new Label(date_debut_offre));
             BodyConainter.add(new Label(date_fin_offre));
 
-          /*  BodyConainter.add(lSupprimer);
-            BodyConainter.add(lModifier);
+            BodyConainter.add(lSupprimer);
+           /* BodyConainter.add(lModifier);
             BodyConainter.add(lReserver);
             BodyConainter.add(lDetails);*/
             tempForm.add(BodyConainter);
@@ -206,10 +206,10 @@ public class ListOffreForm extends  Form {
                         Label label6 = (Label) mb.getComponentAt(5);
                         String line6 = label6.getText();
                         
-                       /* Label label7 = (Label) mb.getComponentAt(6);
+                        Label label7 = (Label) mb.getComponentAt(6);
                         String line7 = label7.getText();
                         
-                        Label label8 = (Label) mb.getComponentAt(7);
+                        /*Label label8 = (Label) mb.getComponentAt(7);
                         String line8 = label8.getText();
                         
                         Label label9 = (Label) mb.getComponentAt(8);
@@ -223,9 +223,9 @@ public class ListOffreForm extends  Form {
                                 || line3 != null && line3.toLowerCase().indexOf(text) > -1
                                 || line4 != null && line4.toLowerCase().indexOf(text) > -1
                                 || line5 != null && line5.toLowerCase().indexOf(text) > -1
-                                || line6 != null && line6.toLowerCase().indexOf(text) > -1;
-                               /* || line7 != null && line7.toLowerCase().indexOf(text) > -1
-                                || line8 != null && line8.toLowerCase().indexOf(text) > -1;
+                                || line6 != null && line6.toLowerCase().indexOf(text) > -1
+                                || line7 != null && line7.toLowerCase().indexOf(text) > -1;
+                               /* || line8 != null && line8.toLowerCase().indexOf(text) > -1;
                                 || line9 != null && line9.toLowerCase().indexOf(text) > -1
                                 || line10 != null && line10.toLowerCase().indexOf(text) > -1
                                 || line11 != null && line11.toLowerCase().indexOf(text) > -1;*/

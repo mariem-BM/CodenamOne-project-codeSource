@@ -94,7 +94,7 @@ public class ServiceOffre {
         return offres;
     }
    
-      public ArrayList<Offre> getAllOffres(){
+      public ArrayList<Offre> displayOffres(){
         
         String url = Statics.BASE_URL+"/offre/AllOffres";
         req.setUrl(url);
@@ -108,6 +108,26 @@ public class ServiceOffre {
         });
         NetworkManager.getInstance().addToQueueAndWait(req);
         return offres;
+    }
+      
+      
+      //delete
+      
+        public boolean deleteOffre(Offre o) {
+    
+        String url = Statics.BASE_URL + "/offre/deleteOffrejson?id="+o.getId();
+        //création de l'URL
+        req.setUrl(url);// Insertion de l'URL de notre demande de connexion
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this); //Supprimer cet actionListener       
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        System.out.println(resultOK);
+        return resultOK;
     }
 
 }
