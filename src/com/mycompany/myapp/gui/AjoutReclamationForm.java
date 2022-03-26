@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.myapp.gui;
+/*package com.mycompany.myapp.gui;
 import com.codename1.components.InfiniteProgress;
 import com.codename1.ui.Button;
 import com.codename1.ui.Dialog;
@@ -24,7 +24,7 @@ import java.util.Date;
  *
  * @author ASUS
  */
-public class AjoutReclamationForm extends BaseForm {
+/*public class AjoutReclamationForm extends BaseForm {
     Form current;
     public AjoutReclamationForm(Resources res){
        // super("Newsfeed",BoxLayout.y());
@@ -84,13 +84,14 @@ public class AjoutReclamationForm extends BaseForm {
           
           });
         
-         Button btnListReclams = new Button("List Reclam");
-      btnListReclams.addActionListener(e-> new ListReclamationForm(res).show());
+         Button addButton = new Button("List Reclam");
+      addButton.addActionListener(e-> new ListReclamationForm(res).show());
        // addAll(btnListReclams);
-                  addAll(tfdescription_reclamation,btnAjouter,btnListReclams);
+                  addAll(tfdescription_reclamation,btnAjouter,addButton);
                //    getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> res.showBack());
                 
     }
     
     
 }
+*/

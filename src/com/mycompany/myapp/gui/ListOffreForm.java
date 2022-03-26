@@ -76,7 +76,7 @@ public class ListOffreForm extends  Form {
         
         Label labelModifier = new Label("Modifier");
         Label labelSupprimer = new Label("Supprimer");
-        Label labelDetail = new Label("Details");
+        Label labelDetails = new Label("Details");
         
         Container HeadConainter = new Container(gridLayout);
         
@@ -90,7 +90,7 @@ public class ListOffreForm extends  Form {
         
         HeadConainter.add(labelModifier);
         HeadConainter.add(labelSupprimer);
-        HeadConainter.add(labelDetail);
+        HeadConainter.add(labelDetails);
         
         tempForm.add(HeadConainter);
         
@@ -138,7 +138,7 @@ public class ListOffreForm extends  Form {
             });
            
             //boutton detail offre
-            Label lDetails  = new Label("");
+            Label lDetails  = new Label(" ");
             lDetails.setUIID("NewsTopLine");
             Style DetailsStyle = new Style(lDetails.getUnselectedStyle());
             DetailsStyle.setFgColor(0xf7ad02);

@@ -28,13 +28,14 @@ import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.Layout;
 import com.codename1.ui.util.Resources;
-import com.mycompany.myapp.gui.AjoutReclamationForm;
+import com.mycompany.myapp.gui.AjoutReclamForm;
 import com.mycompany.myapp.MyApplication;
 
 //import com.mycompany.myapp.gui.AddReclamationForm;
 //import com.mycompany.myapp.gui.ListReclamationForm;
 import com.mycompany.myapp.gui.HomeForm;
 import com.mycompany.myapp.gui.HomeOffreForm;
+import com.mycompany.myapp.gui.HomeReclamForm;
 /**
  * Common code that can setup the side menu
  *
@@ -79,7 +80,7 @@ Form current;
 //        getToolbar().addMaterialCommandToSideMenu("  List Billets", FontImage.MATERIAL_ACCESS_TIME,  e-> new ListBilletForm(current).show());
         getToolbar().addMaterialCommandToSideMenu("  Billet", FontImage.MATERIAL_TRENDING_UP,  e -> new HomeForm().show());
         getToolbar().addMaterialCommandToSideMenu("  Reservation", FontImage.MATERIAL_TRENDING_UP,  e -> new HomeForm().show());
-        getToolbar().addMaterialCommandToSideMenu("  Reclamation", FontImage.MATERIAL_TRENDING_UP,  e -> new HomeForm().show());
+        getToolbar().addMaterialCommandToSideMenu("  Reclamation", FontImage.MATERIAL_TRENDING_UP,  e -> new HomeReclamForm(current).show());
   //  getToolbar().addMaterialCommandToSideMenu("  Reclamation", FontImage.MATERIAL_TRENDING_UP,  e -> new AjoutReclamationForm(theme).show());
         getToolbar().addMaterialCommandToSideMenu("  Offre", FontImage.MATERIAL_TRENDING_UP,  e -> new HomeOffreForm(current).show());
 

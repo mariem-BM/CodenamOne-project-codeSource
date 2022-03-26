@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.myapp.gui;
+/*package com.mycompany.myapp.gui;
 
 import com.codename1.ui.Button;
 import com.codename1.ui.Command;
@@ -21,7 +21,7 @@ import com.mycompany.myapp.services.ServiceReclamation;
  *
  * @author ASUS
  */
-public class DeleteReclamationForm extends Form{
+/*public class DeleteReclamationForm extends Form{
     
     
     
@@ -62,3 +62,4 @@ public class DeleteReclamationForm extends Form{
        //getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
     }
 }
+*/

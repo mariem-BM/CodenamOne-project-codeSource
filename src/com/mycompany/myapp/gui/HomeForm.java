@@ -24,13 +24,13 @@ public class HomeForm extends Form {
         
         add(new Label("Choose an option"));
         Button btnAjoutReclamation = new Button("Add Reclamation");
-        Button btnListReclams= new Button("List Reclamations");
+        Button addButton= new Button("List Reclamations");
        Button btnSupprimerReclamation = new Button("supprimer Reclamations");
         
         //btnAddReclamation.addActionListener(e-> new AddReclamationForm(current).show());
         //btnListReclamation.addActionListener(e-> new ListReclamationForm(current).show());
       
-        addAll(btnAjoutReclamation,btnListReclams,btnSupprimerReclamation);
+        addAll(btnAjoutReclamation,addButton,btnSupprimerReclamation);
           
         
     }

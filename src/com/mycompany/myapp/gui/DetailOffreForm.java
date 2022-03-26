@@ -25,13 +25,13 @@ public class DetailOffreForm extends Form {
         
         o = ServiceOffre.getInstance().DetailOffre(o);
           
-        Label labelid = new Label(String.valueOf(o.getId()),"id de l'offre");
-        Label labelnom_offre= new Label(String.valueOf(o.getNomOffre()), "Nom offre");
-        Label labeldescription_offre= new Label(String.valueOf(o.getDescriptionOffre()), "Description offre");
-        Label labelprix_offre = new Label(String.valueOf(o.getPrixOffre()),"Prix offre");
+        Label labelid = new Label(String.valueOf(o.getId()),"id_offre");
+        Label labelnom_offre= new Label(String.valueOf(o.getNomOffre()), "nom_offre");
+        Label labeldescription_offre= new Label(String.valueOf(o.getDescriptionOffre()), "descriptionçoffre");
+        Label labelprix_offre = new Label(String.valueOf(o.getPrixOffre()),"prix_offre");
         Label labelreduction= new Label(String.valueOf(o.getReduction()), "reduction");
-        Label labeldate_debut_offre = new Label(String.valueOf(o.getDateDebutOffre()),"labeldate_debut_offre ");
-        Label labeldate_fin_offre = new Label(String.valueOf(o.getDateFinOffre()), "labeldate_fin_offre ");
+        Label labeldate_debut_offre = new Label(String.valueOf(o.getDateDebutOffre()),"date_debut_offre ");
+        Label labeldate_fin_offre = new Label(String.valueOf(o.getDateFinOffre()), "date_fin_offre ");
       
        
         Button suivant = new Button("suivant");

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.mycompany.myapp.gui;
+/*package com.mycompany.myapp.gui;
 
 //import com.codename1.components.SpanLabel;
 //import static com.codename1.push.PushContent.setTitle;
@@ -38,12 +38,12 @@ import java.util.ArrayList;
  *
  * @author ASUS
  */
-public class ListReclamationForm extends Form  {
+/*public class ListReclamationForm extends Form  {
    
    
     Form current;
     
-   /*/ public ListReclamationForm(Resources res) {
+   /* public ListReclamationForm(Resources res) {
     
       setTitle("List Billets");
 
@@ -53,7 +53,7 @@ public class ListReclamationForm extends Form  {
         add(sp);
         
     }
-}*/
+}
        // getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> res.show());
     
   public ListReclamationForm(Resources res){
@@ -84,7 +84,7 @@ public class ListReclamationForm extends Form  {
        }
        
     }
- /*String description_reclamation,String date_reclamation,String etat_reclamation,*/
+ /*String description_reclamation,String date_reclamation,String etat_reclamation,
     private void addButton(Reclamation rec,Resources res) {
       
        Container cnt = new Container();
@@ -96,7 +96,7 @@ public class ListReclamationForm extends Form  {
       /*  Label descriptionTxt = new Label("description_reclamation :"+description_reclamation,"NewsTopLine2");
         Label dateTxt = new Label("date_reclamation :"+date_reclamation,"NewsTopLine2");
          Label etatTxt = new Label("etat_reclamation :"+etat_reclamation,"NewsTopLine2");
-        */
+        
         Label objetTxt = new Label("date_reclamation : "+rec.getDateReclamation(),"NewsTopLine2");
         Label dateTxt = new Label("description_reclamation : "+rec.getDescriptionReclamation(),"NewsTopLine2");
         Label etatTxt = new Label("etat_reclamation : "+rec.getEtatReclamation(),"NewsTopLine2" );
@@ -133,7 +133,7 @@ public class ListReclamationForm extends Form  {
                     new ListReclamationForm(res).show();
                 }
            
-        });*/
+        });
     
        cnt.add(BorderLayout.CENTER,BoxLayout.encloseY(
                 
@@ -149,4 +149,4 @@ public class ListReclamationForm extends Form  {
     }
 
 
-
+*/
