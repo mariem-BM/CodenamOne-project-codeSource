@@ -60,7 +60,7 @@ public class AjoutOffreForm extends Form {
                 
             }
         });
-        //next.addActionListener(e -> new ListBilletForm(current));
+        next.addActionListener(e -> new ListOffreForm(current));
         addAll(tfnom_offre,tfdescription_offre,tfprix_offre,tfreduction,tfdate_debut_offre,tfdate_fin_offre,btnAddOffre,next);
       //  getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
                 
