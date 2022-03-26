@@ -74,10 +74,9 @@ public class ListOffreForm extends  Form {
         Label labeldate_debut_offre = new Label("Date deb");
         Label labeldate_fin_offre = new Label("Date fin");
         
-         Label labelModifier = new Label("Modifier");
+        Label labelModifier = new Label("Modifier");
         Label labelSupprimer = new Label("Supprimer");
-       
-    //    Label labelDetails = new Label("Details");
+        Label labelDetail = new Label("Details");
         
         Container HeadConainter = new Container(gridLayout);
         
@@ -91,14 +90,15 @@ public class ListOffreForm extends  Form {
         
         HeadConainter.add(labelModifier);
         HeadConainter.add(labelSupprimer);
-      //  HeadConainter.add(labelDetails);
+        HeadConainter.add(labelDetail);
         
         tempForm.add(HeadConainter);
         
         
         ArrayList<Offre> Offres = ServiceOffre.getInstance().displayOffres();
         for (Offre o : Offres) {
-            //delete button
+            
+            //bouttn suppression
             Label lSupprimer = new Label(" ");
             lSupprimer.setUIID("NewsTopLine");
             Style supprimerStyle = new Style(lSupprimer.getUnselectedStyle());
@@ -106,7 +106,7 @@ public class ListOffreForm extends  Form {
             FontImage supprimerImage = FontImage.createMaterial(FontImage.MATERIAL_DELETE, supprimerStyle);
             lSupprimer.setIcon(supprimerImage);
             lSupprimer.setTextPosition(RIGHT);
-            //click delete icon
+            //on-click delete icon
            lSupprimer.addPointerPressedListener(l -> {
 
                 Dialog dig = new Dialog("Suppresion");
@@ -117,13 +117,14 @@ public class ListOffreForm extends  Form {
                     dig.dispose();
                 }
 
-                // appel de la fonction delete du service Experience
+                // lena chn3aytou l fonction delete 
                 if (ServiceOffre.getInstance().deleteOffre(o)) {
 
                     new ListOffreForm(current);
                 }
             });
-            //update Button
+           
+            // butoon l modif
            Label lModifier = new Label(" ");
             lModifier.setUIID("NewsTopLine");
             Style modifierStyle = new Style(lModifier.getUnselectedStyle());
@@ -136,18 +137,18 @@ public class ListOffreForm extends  Form {
                 new ModifOffreForm(o).show();
             });
            
-            //Details Button
-          /*  Label lDetails  = new Label(" ");
+            //boutton detail offre
+            Label lDetails  = new Label("");
             lDetails.setUIID("NewsTopLine");
             Style DetailsStyle = new Style(lDetails.getUnselectedStyle());
             DetailsStyle.setFgColor(0xf7ad02);
             FontImage dFontImage = FontImage.createMaterial(FontImage.MATERIAL_MODE_EDIT, DetailsStyle);
             lDetails.setIcon(dFontImage);
             lDetails.setTextPosition(LEFT);
-            //click Details button
+            //on click ala butoon details
             lDetails.addPointerPressedListener(l -> {
-                new DetailBilletForm(r).show();
-            });*/
+                new DetailOffreForm(o).show();
+            });
             
             Container BodyConainter = new Container(gridLayout);
              
@@ -169,8 +170,7 @@ public class ListOffreForm extends  Form {
 
             BodyConainter.add(lSupprimer);
             BodyConainter.add(lModifier);
-            /*BodyConainter.add(lReserver);
-            BodyConainter.add(lDetails);*/
+            BodyConainter.add(lDetails);
             tempForm.add(BodyConainter);
 
         }
@@ -212,9 +212,9 @@ public class ListOffreForm extends  Form {
                         Label label8 = (Label) mb.getComponentAt(7);
                         String line8 = label8.getText();
                         
-                      /*  Label label9 = (Label) mb.getComponentAt(8);
+                        Label label9 = (Label) mb.getComponentAt(8);
                         String line9 = label9.getText();
-                        Label label10 = (Label) mb.getComponentAt(9);
+                        /*Label label10 = (Label) mb.getComponentAt(9);
                         String line10 = label10.getText();
                         Label label11 = (Label) mb.getComponentAt(10);
                         String line11 = label11.getText();*/
@@ -225,9 +225,9 @@ public class ListOffreForm extends  Form {
                                 || line5 != null && line5.toLowerCase().indexOf(text) > -1
                                 || line6 != null && line6.toLowerCase().indexOf(text) > -1
                                 || line7 != null && line7.toLowerCase().indexOf(text) > -1
-                                || line8 != null && line8.toLowerCase().indexOf(text) > -1;
-                               /* || line9 != null && line9.toLowerCase().indexOf(text) > -1
-                                || line10 != null && line10.toLowerCase().indexOf(text) > -1
+                                || line8 != null && line8.toLowerCase().indexOf(text) > -1
+                                || line9 != null && line9.toLowerCase().indexOf(text) > -1;
+                               /* || line10 != null && line10.toLowerCase().indexOf(text) > -1
                                 || line11 != null && line11.toLowerCase().indexOf(text) > -1;*/
                         mb.setHidden(!show);
                         mb.setVisible(show);

@@ -41,7 +41,7 @@ public class ModifOffreForm extends Form{
       
         
         Button btnModifier = new Button("Modifier");
-        Button next = new Button("next");
+        Button next = new Button("suivant");
         btnModifier.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {
@@ -61,10 +61,10 @@ public class ModifOffreForm extends Form{
                     System.out.println(o.getDateFinOffre());
 
                     if (ServiceOffre.getInstance().modifOffre(o)) {
-                        Dialog.show("Success", "Connection Accepted", new Command("OK"));
+                        Dialog.show("Success", "Offre modifié avec succés", new Command("OK"));
                         
                     } else {
-                        Dialog.show("ERROR", "Connection Failed", new Command("OK"));
+                        Dialog.show("ERROR", "connexion echoué", new Command("OK"));
                     }
 
                 }

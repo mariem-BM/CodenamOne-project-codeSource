@@ -136,7 +136,7 @@ public class ServiceOffre {
               
         String url = Statics.BASE_URL + "/offre/modifOffrejson/"+o.getId()+"?&nom_offre="+o.getNomOffre()+"&description_offre="+o.getDescriptionOffre()+"&prix_offre="+o.getPrixOffre()+"&reduction="+o.getReduction()+"&date_debut_offre="+o.getDateDebutOffre()+"&date_fin_offre="+o.getDateFinOffre();
 //création de l'URL
-       // String url = Statics.BASE_URL + "billet/UpdateBillets/json/" + b.getId();
+      
         req.setUrl(url);// Insertion de l'URL de notre demande de connexion
         req.addResponseListener(new ActionListener<NetworkEvent>() {
             @Override
@@ -149,5 +149,35 @@ public class ServiceOffre {
         System.out.println(resultOK);
         return resultOK;
     }
+      
+      //detail offre
+      
+      public Offre DetailOffre(Offre o) {
+        String url = Statics.BASE_URL + "/offre/detailOffrejson/"+o.getId();
+        req.setUrl(url);
+        String str = new String(req.getResponseData());
+        req.addResponseListener(((evt) -> {
+            JSONParser jsonp;
+            jsonp = new JSONParser();
+            try {
+                Map<String, Object> obj = jsonp.parseJSON(new CharArrayReader(new String(str).toCharArray()));
+             
+                o.setNomOffre(obj.get("nom_offre").toString());
+                o.setDescriptionOffre(obj.get("description_offre").toString());
+                o.setPrixOffre(((int)Float.parseFloat(obj.get("prix_offre").toString())));
+                o.setReduction(((int)Float.parseFloat(obj.get("reduction").toString())));
+                o.setDateDebutOffre(obj.get("date_debut__offre").toString());
+                o.setDateFinOffre(obj.get("date_fin_offre").toString());
+              
+
+            } catch (IOException ex) {
+                System.out.println("error related to sql :" + ex.getMessage());
+            }
+            System.out.println("data === " + str);
+        }));
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return o;
+    }
+      
 
 }

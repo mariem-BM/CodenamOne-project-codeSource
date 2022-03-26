@@ -30,12 +30,12 @@ public class HomeOffreForm extends Form{
         
         
      Button btnAddOffre = new Button("Ajouter une offre");
-      Button btnListBillets = new Button("List Billets");
+      Button btnListOffres = new Button("Consulter les offres");
       
        
      btnAddOffre.addActionListener(e-> new AjoutOffreForm().show());
-      btnListBillets.addActionListener(e-> new ListOffreForm(current));
-      addAll(btnAddOffre,btnListBillets);
+      btnListOffres.addActionListener(e-> new ListOffreForm(current));
+      addAll(btnAddOffre,btnListOffres);
           
      
      
