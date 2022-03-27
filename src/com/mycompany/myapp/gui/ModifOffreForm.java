@@ -31,13 +31,19 @@ public class ModifOffreForm extends Form{
         tfID.setVisible(false);
         
         TextField tfnom_offre = new TextField(String.valueOf(o.getNomOffre()),"Nom offre");
+        tfnom_offre.setUIID("TextFieldBlack");
         TextField tfdescription_offre= new TextField(String.valueOf(o.getDescriptionOffre()), "description offre");
+        tfdescription_offre.setUIID("TextFieldBlack");
         //TextField tfprix_offre = new TextField(String.valueOf(o.getPrixOffre()),"prix_offre");
          TextField tfprix_offre= new TextField("", "prix");
+         tfprix_offre.setUIID("TextFieldBlack");
        // TextField tfreduction= new TextField(String.valueOf(o.getReduction()), "reduction");
          TextField tfreduction= new TextField("", "reduction");
+         tfreduction.setUIID("TextFieldBlack");
         TextField tfdate_debut_offre= new TextField(String.valueOf(o.getDateDebutOffre()), "date_debut_offre");
+        tfdate_debut_offre.setUIID("TextFieldBlack");
         TextField tfdate_fin_offre= new TextField(String.valueOf(o.getDateFinOffre()), "date_fin_offre");
+        tfdate_fin_offre.setUIID("TextFieldBlack");
       
         
         Button btnModifier = new Button("Modifier");

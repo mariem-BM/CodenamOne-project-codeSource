@@ -38,7 +38,6 @@ public class ModifReclamForm extends  Form {
        // TextField tfetat_reclamation= new TextField(String.valueOf(r.getEtatReclamation()), "etat reclamation");
        TextField tfuser= new TextField(String.valueOf(r.getUser()), "");
        
-        
         Button btnModifierReclam = new Button("Modifier");
         Button next = new Button("suivant");
         btnModifierReclam.addActionListener(new ActionListener() {

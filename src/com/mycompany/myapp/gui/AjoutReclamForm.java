@@ -29,7 +29,7 @@ public class AjoutReclamForm extends Form {
         setLayout(BoxLayout.y());
         
         TextField tfdescription_reclamation = new TextField("","description reclamation");
-       
+       tfdescription_reclamation.setUIID("TextFieldBlack");
         Button btnAddReclamation = new Button("Reclamer");
         Button next = new Button("suivant");
         

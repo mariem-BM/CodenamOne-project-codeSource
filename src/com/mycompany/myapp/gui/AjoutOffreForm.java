@@ -30,10 +30,15 @@ public class AjoutOffreForm extends Form {
         TextField tfnom_offre = new TextField("","Nom offre");
         tfnom_offre.setUIID("TextFieldBlack");
         TextField tfdescription_offre= new TextField("", "Description offre");
+        tfdescription_offre.setUIID("TextFieldBlack");
         TextField tfprix_offre = new TextField("","prix Offre");
+        tfprix_offre.setUIID("TextFieldBlack");
         TextField tfreduction= new TextField("", "reduction");
+        tfreduction.setUIID("TextFieldBlack");
         TextField tfdate_debut_offre = new TextField("", "date debut offre");
+        tfdate_debut_offre.setUIID("TextFieldBlack");
         TextField tfdate_fin_offre = new TextField("", "date fin offre");
+        tfdate_fin_offre.setUIID("TextFieldBlack");
         Button btnAddOffre = new Button("Ajouter l'Offre");
         Button next = new Button("suivant");
         btnAddOffre.addActionListener(new ActionListener() {

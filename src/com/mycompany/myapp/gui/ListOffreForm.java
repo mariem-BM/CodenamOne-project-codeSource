@@ -74,8 +74,9 @@ public class ListOffreForm extends  Form {
         Label labeldate_debut_offre = new Label("Date deb");
         Label labeldate_fin_offre = new Label("Date fin");
         
-        Label labelModifier = new Label("Modifier");
+        
         Label labelSupprimer = new Label("Supprimer");
+        Label labelModifier = new Label("Modifier");
         Label labelDetails = new Label("Details");
         
         Container HeadConainter = new Container(gridLayout);
