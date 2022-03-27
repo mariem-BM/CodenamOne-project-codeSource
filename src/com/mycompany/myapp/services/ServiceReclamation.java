@@ -5,14 +5,18 @@
  */
 package com.mycompany.myapp.services;
 
+import com.codename1.io.CharArrayReader;
 import com.codename1.io.ConnectionRequest;
+import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import com.codename1.ui.events.ActionListener;
-import com.mycompany.myapp.entities.Offre;
 import com.mycompany.myapp.entities.Reclamation;
 import com.mycompany.myapp.utils.Statics;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  *
@@ -57,5 +61,52 @@ public class ServiceReclamation {
         return resultOK;
     }
      
+            
+            //Affichage des reclam
+     
+         public ArrayList<Reclamation> parseReclamations(String jsonText){
+        try {
+            reclamations=new ArrayList<>();
+            JSONParser j = new JSONParser();
+            Map<String,Object> tasksListJson = 
+               j.parseJSON(new CharArrayReader(jsonText.toCharArray()));
+            
+            List<Map<String,Object>> list = (List<Map<String,Object>>)tasksListJson.get("root");
+            for(Map<String,Object> obj : list){
+                Reclamation r = new Reclamation();
+                float id = Float.parseFloat(obj.get("id").toString());
+                r.setId((int)id);
+                
+                r.setDescriptionReclamation(obj.get("description_reclamation").toString());
+                //r.setEtatReclamation(obj.get("etat_reclamation").toString());
+                r.setDateReclamation(obj.get("date_reclamation").toString());
+               
+                reclamations.add(r);
+            }
+            
+            
+        } catch (IOException ex) {
+            
+        }
+        return reclamations;
+    }
+         
+          public ArrayList<Reclamation> displayReclamations(){
+        
+        String url = Statics.BASE_URL+"/reclamation/AllReclamations";
+        req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                reclamations = parseReclamations(new String(req.getResponseData()));
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return reclamations;
+    }
+      
+   
     
 }

@@ -9,7 +9,6 @@ import com.codename1.ui.Button;
 import com.codename1.ui.Form;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
-import com.mycompany.myapp.entities.Offre;
 import com.mycompany.myapp.entities.Reclamation;
 
 /**
@@ -28,12 +27,12 @@ public class HomeReclamForm extends Form{
         
         
      Button btnAddReclamation = new Button("Ajouter une reclamation");
-     // Button btnListOffres = new Button("Consulter les reclamations");
+    Button btnListReclamations = new Button("Consulter les reclamations");
       
        
      btnAddReclamation.addActionListener(e-> new AjoutReclamForm().show());
-     // btnListOffres.addActionListener(e-> new ListOffreForm(current));
-      addAll(btnAddReclamation);
+     btnListReclamations.addActionListener(e-> new ListReclamForm(current));
+      addAll(btnAddReclamation, btnListReclamations);
           
      
      
