@@ -6,15 +6,20 @@
 package com.mycompany.myapp.gui;
 
 import com.codename1.ui.Button;
+import static com.codename1.ui.CN1Constants.PICKER_TYPE_DATE;
 import com.codename1.ui.Command;
 import com.codename1.ui.Dialog;
+import com.codename1.ui.Display;
 import com.codename1.ui.Form;
 import com.codename1.ui.TextField;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.spinner.Picker;
+import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.entities.Reclamation;
 import com.mycompany.myapp.services.ServiceReclamation;
+//import java.awt.Color;
 
 /**
  *
@@ -29,8 +34,11 @@ public class AjoutReclamForm extends Form {
         setLayout(BoxLayout.y());
         
         TextField tfdescription_reclamation = new TextField("","description reclamation");
-       tfdescription_reclamation.setUIID("TextFieldBlack");
+        tfdescription_reclamation.setUIID("TextFieldBlack");
+        
+        //addStringValue("date_reclamation",datePicker);
         Button btnAddReclamation = new Button("Reclamer");
+         //btnAddReclamation.setBackground(Color.red);
         Button next = new Button("suivant");
         
         btnAddReclamation.addActionListener(new ActionListener() {
@@ -63,4 +71,8 @@ public class AjoutReclamForm extends Form {
       //  getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
                 
 }
+
+    AjoutReclamForm(Resources globalResources) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

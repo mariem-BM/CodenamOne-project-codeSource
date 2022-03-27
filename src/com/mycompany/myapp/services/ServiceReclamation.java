@@ -47,7 +47,7 @@ public class ServiceReclamation {
             public boolean addReclamation(Reclamation r) {
         System.out.println(r);
       // String url = Statics.BASE_URL + "offre/ajoutOffrejson/" + o.getNomOffre()+"?description_offre=" + o.getDescriptionOffre() + "&prix_offre=" + o.getPrixOffre()+ "&reduction=" + o.getReduction()+ "&date_debut_offre=" + o.getDateDebutOffre()+ "&date_fin_offre=" + o.getDateFinOffre();
-  String url = Statics.BASE_URL + "/reclamation/ajoutReclamationjson/1?description_reclamation="+r.getDescriptionReclamation()+"&user="+r.getUser();
+  String url = Statics.BASE_URL + "/reclamation/ajoutReclamationjson/1?description_reclamation="+r.getDescriptionReclamation()+"&user="+r.getUser()+"&date_reclamation"+r.getDateReclamation();
     
        req.setUrl(url);
 
@@ -155,5 +155,30 @@ public class ServiceReclamation {
         System.out.println(resultOK);
         return resultOK;
     }
-    
+    //detail reclam
+     /*  public Reclamation DetailReclamation(Reclamation r) {
+        String url = Statics.BASE_URL + "/reclamation/detailReclamationjson/"+r.getId();
+        req.setUrl(url);
+        String str = new String(req.getResponseData());
+        req.addResponseListener(((evt) -> {
+            JSONParser jsonp;
+            jsonp = new JSONParser();
+            try {
+                Map<String, Object> obj = jsonp.parseJSON(new CharArrayReader(new String(str).toCharArray()));
+             
+                r.setDescriptionReclamation(obj.get("description_reclamation").toString());
+                r.setDateReclamation(obj.get("date_reclamation").toString());
+                r.setEtatReclamation(obj.get("etat_reclamation").toString());
+               
+              
+
+            } catch (IOException ex) {
+                System.out.println("error related to sql :" + ex.getMessage());
+            }
+            System.out.println("data === " + str);
+        }));
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return r;
+    }*/
+      
 }

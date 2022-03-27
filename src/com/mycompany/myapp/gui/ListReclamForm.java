@@ -78,7 +78,7 @@ public class ListReclamForm extends Form {
        
        Label labelModifierReclam = new Label("Modifier");
         Label labelSupprimerReclam = new Label("Supprimer");
-       /* Label labelDetails = new Label("Details");*/
+        //Label labelDetails = new Label("Details");
         
         Container HeadConainter = new Container(gridLayout);
         
@@ -90,8 +90,8 @@ public class ListReclamForm extends Form {
       
         
        /* HeadConainter.add(labelModifierReclam);
-        HeadConainter.add(labelSupprimerReclam);
-      /*  HeadConainter.add(labelDetails);*/
+        HeadConainter.add(labelSupprimerReclam);*/
+        //HeadConainter.add(labelDetails);
         tempForm.add(HeadConainter);
         
         
@@ -147,9 +147,9 @@ public class ListReclamForm extends Form {
             lDetails.setTextPosition(LEFT);
             //on click ala butoon details
             lDetails.addPointerPressedListener(l -> {
-                new DetailOffreForm(o).show();
-            });*/
-            
+                new DetailReclamForm(r).show();
+            });
+            */
             Container BodyConainter = new Container(gridLayout);
              
                     
@@ -173,7 +173,7 @@ public class ListReclamForm extends Form {
           
             BodyConainter.add(lSupprimer);
             BodyConainter.add(lModifier);
-           // BodyConainter.add(lDetails);*/
+           //BodyConainter.add(lDetails);
             tempForm.add(BodyConainter);
 
         }
@@ -212,7 +212,7 @@ public class ListReclamForm extends Form {
                         /*Label label7 = (Label) mb.getComponentAt(6);
                         String line7 = label7.getText();
                         
-                        Label label8 = (Label) mb.getComponentAt(7);
+                       /* Label label8 = (Label) mb.getComponentAt(7);
                         String line8 = label8.getText();
                         
                         Label label9 = (Label) mb.getComponentAt(8);
@@ -227,7 +227,7 @@ public class ListReclamForm extends Form {
                                 || line4 != null && line4.toLowerCase().indexOf(text) > -1
                                 || line5 != null && line5.toLowerCase().indexOf(text) > -1
                                 || line6 != null && line6.toLowerCase().indexOf(text) > -1;
-                                /*|| line7 != null && line7.toLowerCase().indexOf(text) > -1
+                               /* || line7 != null && line7.toLowerCase().indexOf(text) > -1
                                 || line8 != null && line8.toLowerCase().indexOf(text) > -1
                                 || line9 != null && line9.toLowerCase().indexOf(text) > -1;*/
                                /* || line10 != null && line10.toLowerCase().indexOf(text) > -1

@@ -8,13 +8,16 @@ package com.mycompany.myapp.gui;
 import com.codename1.ui.Button;
 import com.codename1.ui.Command;
 import com.codename1.ui.Dialog;
+import com.codename1.ui.Display;
 import com.codename1.ui.Form;
 import com.codename1.ui.TextField;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
+import com.codename1.ui.spinner.Picker;
 import com.mycompany.myapp.services.ServiceOffre;
 import com.mycompany.myapp.entities.Offre;
+//import static java.lang.String.format;
 
 /**
  *
@@ -37,11 +40,15 @@ public class AjoutOffreForm extends Form {
         tfreduction.setUIID("TextFieldBlack");
         TextField tfdate_debut_offre = new TextField("", "date debut offre");
         tfdate_debut_offre.setUIID("TextFieldBlack");
+        Picker datePicker = new Picker();
+        datePicker.setType(Display.PICKER_TYPE_DATE);
         TextField tfdate_fin_offre = new TextField("", "date fin offre");
         tfdate_fin_offre.setUIID("TextFieldBlack");
         Button btnAddOffre = new Button("Ajouter l'Offre");
         Button next = new Button("suivant");
         btnAddOffre.addActionListener(new ActionListener() {
+            
+            
             @Override
             public void actionPerformed(ActionEvent evt) {
                 if ((tfnom_offre.getText().length()==0)||( tfdescription_offre.getText().length()==0)||(tfprix_offre.getText().length()==0)||(tfreduction.getText().length()==0)||(tfdate_debut_offre.getText().length()==0)||(tfdate_fin_offre.getText().length()==0))

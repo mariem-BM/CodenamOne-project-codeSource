@@ -152,7 +152,7 @@ public class ServiceOffre {
       
       //detail offre
       
-      public Offre DetailOffre(Offre o) {
+    /*  public Offre DetailOffre(Offre o) {
         String url = Statics.BASE_URL + "/offre/detailOffrejson/"+o.getId();
         req.setUrl(url);
         String str = new String(req.getResponseData());
@@ -178,6 +178,6 @@ public class ServiceOffre {
         NetworkManager.getInstance().addToQueueAndWait(req);
         return o;
     }
-      
+      */
 
 }
