@@ -74,8 +74,9 @@ public class ListReclamForm extends Form {
         Label labeldescription_reclamation = new Label("Description");
         Label labeletat_reclamation= new Label("etat");
         Label labeldate_reclamation = new Label("date");
+         Label labeluser = new Label("user");
        
-      // Label labelModifier = new Label("Modifier");
+       Label labelModifierReclam = new Label("Modifier");
         Label labelSupprimerReclam = new Label("Supprimer");
        /* Label labelDetails = new Label("Details");*/
         
@@ -85,9 +86,10 @@ public class ListReclamForm extends Form {
         HeadConainter.add(labeldescription_reclamation);
         HeadConainter.add(labeletat_reclamation);
         HeadConainter.add(labeldate_reclamation);
+        HeadConainter.add(labeluser);
       
         
-       // HeadConainter.add(labelModifier);
+        HeadConainter.add(labelModifierReclam);
         HeadConainter.add(labelSupprimerReclam);
       /*  HeadConainter.add(labelDetails);*/
         tempForm.add(HeadConainter);
@@ -123,7 +125,7 @@ public class ListReclamForm extends Form {
             });
            
             // butoon l modif
-          /* Label lModifier = new Label(" ");
+           Label lModifier = new Label(" ");
             lModifier.setUIID("NewsTopLine");
             Style modifierStyle = new Style(lModifier.getUnselectedStyle());
             modifierStyle.setFgColor(0xf7ad02);
@@ -132,8 +134,8 @@ public class ListReclamForm extends Form {
             lModifier.setTextPosition(LEFT);
             //click update button
             lModifier.addPointerPressedListener(l -> {
-                new ModifOffreForm(o).show();
-            });*/
+                new ModifReclamForm(r).show();
+            });
            
             //boutton detail offre
            /* Label lDetails  = new Label(" ");
@@ -155,7 +157,8 @@ public class ListReclamForm extends Form {
             String description_reclamation = String.valueOf(r.getDescriptionReclamation());
           /* String etat_reclamation = String.valueOf(r.getEtatReclamation());*/
           // String etat_reclamation = new Label("etat_reclamation : "+r.getEtatReclamation());
-                String etat_reclamation = String.valueOf(r.getEtatReclamation());
+           String etat_reclamation = String.valueOf(r.getEtatReclamation());
+         
         /*  if(r.getEtatReclamation() == "" ) {
             r.setEtatReclamation("non Traitée");
         }
@@ -165,14 +168,16 @@ public class ListReclamForm extends Form {
            //  $reclamation->setEtatReclamation("envoyé");
             
             String date_reclamation = String.valueOf(r.getDateReclamation());
+            String user = String.valueOf(r.getUser());
             
             BodyConainter.add(new Label(description_reclamation));
             BodyConainter.add(new Label(etat_reclamation));
             BodyConainter.add(new Label(date_reclamation));
+            BodyConainter.add(new Label(user));
           
             BodyConainter.add(lSupprimer);
-          /*  BodyConainter.add(lModifier);
-            BodyConainter.add(lDetails);*/
+            BodyConainter.add(lModifier);
+           // BodyConainter.add(lDetails);*/
             tempForm.add(BodyConainter);
 
         }
@@ -202,13 +207,13 @@ public class ListReclamForm extends Form {
                         Label label4 = (Label) mb.getComponentAt(3);
                         String line4 = label4.getText();
                         
-                       /* Label label5 = (Label) mb.getComponentAt(4);
+                        Label label5 = (Label) mb.getComponentAt(4);
                         String line5 = label5.getText();
                         
                         Label label6 = (Label) mb.getComponentAt(5);
                         String line6 = label6.getText();
                         
-                        Label label7 = (Label) mb.getComponentAt(6);
+                        /*Label label7 = (Label) mb.getComponentAt(6);
                         String line7 = label7.getText();
                         
                         Label label8 = (Label) mb.getComponentAt(7);
@@ -223,10 +228,10 @@ public class ListReclamForm extends Form {
                         boolean show = line1 != null && line1.toLowerCase().indexOf(text) > -1
                                 || line2 != null && line2.toLowerCase().indexOf(text) > -1
                                 || line3 != null && line3.toLowerCase().indexOf(text) > -1
-                                || line4 != null && line4.toLowerCase().indexOf(text) > -1;
-                              /*  || line5 != null && line5.toLowerCase().indexOf(text) > -1
-                                || line6 != null && line6.toLowerCase().indexOf(text) > -1
-                                || line7 != null && line7.toLowerCase().indexOf(text) > -1
+                                || line4 != null && line4.toLowerCase().indexOf(text) > -1
+                                || line5 != null && line5.toLowerCase().indexOf(text) > -1
+                                || line6 != null && line6.toLowerCase().indexOf(text) > -1;
+                                /*|| line7 != null && line7.toLowerCase().indexOf(text) > -1
                                 || line8 != null && line8.toLowerCase().indexOf(text) > -1
                                 || line9 != null && line9.toLowerCase().indexOf(text) > -1;*/
                                /* || line10 != null && line10.toLowerCase().indexOf(text) > -1

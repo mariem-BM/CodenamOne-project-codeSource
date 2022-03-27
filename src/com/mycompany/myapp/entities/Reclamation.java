@@ -13,7 +13,7 @@ import java.util.Date;
  */
 public class Reclamation {
     
-    private int id;
+    private int id,user;
     private String description_reclamation;
    private String etat_reclamation;
     private String date_reclamation;
@@ -24,18 +24,34 @@ public class Reclamation {
     
     
     
-    public Reclamation(int id, String description_reclamation, String etat_reclamation, String date_reclamation) {
+    public Reclamation(int id, String description_reclamation, String etat_reclamation, String date_reclamation,int user) {
         this.id = id;
         this.description_reclamation = description_reclamation;
         this.etat_reclamation = etat_reclamation;
         this.date_reclamation = date_reclamation;
+        this.user = user;
     }
 
+   
     public Reclamation(String description_reclamation, String etat_reclamation, String date_reclamation) {
         this.description_reclamation = description_reclamation;
         this.etat_reclamation = etat_reclamation;
         this.date_reclamation = date_reclamation;
     }
+
+    public Reclamation(int id, String description_reclamation ,int user) {
+        this.id = id;
+       
+        this.description_reclamation = description_reclamation;
+         this.user = user;
+    }
+
+    public Reclamation(int id, String description_reclamation) {
+        this.id = id;
+        this.description_reclamation = description_reclamation;
+    }
+    
+    
 
     public int getId() {
         return id;
@@ -78,10 +94,20 @@ public class Reclamation {
         this.date_reclamation = date_reclamation;
     }
 
+     public int getUser() {
+        return user;
+    }
+
+    public void setUser(int user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
-        return "Reclamation{" + "id=" + id + ", description_reclamation=" + description_reclamation + ", etat_reclamation=" + etat_reclamation + ", date_reclamation=" + date_reclamation + '}';
+        return "Reclamation{" + "id=" + id + ", user=" + user + ", description_reclamation=" + description_reclamation + ", etat_reclamation=" + etat_reclamation + ", date_reclamation=" + date_reclamation + '}';
     }
+    
+  
     
     
         

@@ -28,6 +28,7 @@ public class AjoutOffreForm extends Form {
         setLayout(BoxLayout.y());
         
         TextField tfnom_offre = new TextField("","Nom offre");
+        tfnom_offre.setUIID("TextFieldBlack");
         TextField tfdescription_offre= new TextField("", "Description offre");
         TextField tfprix_offre = new TextField("","prix Offre");
         TextField tfreduction= new TextField("", "reduction");

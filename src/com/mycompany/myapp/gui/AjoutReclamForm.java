@@ -29,11 +29,6 @@ public class AjoutReclamForm extends Form {
         setLayout(BoxLayout.y());
         
         TextField tfdescription_reclamation = new TextField("","description reclamation");
-       /* TextField tfdescription_offre= new TextField("", "Description offre");
-        TextField tfprix_offre = new TextField("","prix Offre");
-        TextField tfreduction= new TextField("", "reduction");
-        TextField tfdate_debut_offre = new TextField("", "date debut offre");
-        TextField tfdate_fin_offre = new TextField("", "date fin offre");*/
        
         Button btnAddReclamation = new Button("Reclamer");
         Button next = new Button("suivant");

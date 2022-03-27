@@ -135,6 +135,25 @@ public class ServiceReclamation {
         System.out.println(resultOK);
         return resultOK;
     }
-        
+    
+         //update reclam
+         
+      public boolean modifReclamation(Reclamation r) { 
+              
+        String url = Statics.BASE_URL + "/reclamation/modifReclamationjson/"+r.getId()+"/"+r.getUser()+"?&description_reclamation="+r.getDescriptionReclamation();
+//création de l'URL
+      
+        req.setUrl(url);// Insertion de l'URL de notre demande de connexion
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this); //Supprimer cet actionListener       
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        System.out.println(resultOK);
+        return resultOK;
+    }
     
 }
