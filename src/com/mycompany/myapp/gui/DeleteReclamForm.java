@@ -15,25 +15,26 @@ import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
 import com.mycompany.myapp.entities.Offre;
+import com.mycompany.myapp.entities.Reclamation;
 import com.mycompany.myapp.services.ServiceOffre;
+import com.mycompany.myapp.services.ServiceReclamation;
 
 /**
  *
  * @author ASUS
  */
-public class DeleteOffreForm extends Form {
+public class DeleteReclamForm extends Form {
     
-
-    
-     DeleteOffreForm(Resources res, Offre o) {
-        setTitle("Supprimer l'offre");
+     DeleteReclamForm(Resources res, Reclamation r) {
+        setTitle("Supprimer la reclamation");
         setLayout(BoxLayout.y());
    
         
-        TextField tfID = new TextField ("", "id offre");
-        Button btnSupprimer = new Button("Supprimer l'offre");
+        TextField tfID = new TextField ("", "id reclamation");
+        Button btnSupprimerReclam = new Button("Supprimer la reclamation");
         
-         btnSupprimer.addActionListener(new ActionListener() {
+    
+ btnSupprimerReclam.addActionListener(new ActionListener() {
              
       @Override
             public void actionPerformed(ActionEvent evt) {
@@ -41,15 +42,13 @@ public class DeleteOffreForm extends Form {
                     Dialog.show("Alert", "Veillez remplir tous les champs s'il vous plait", new Command("OK"));
                 } else {
                     System.out.println(tfID.getText());
-                    System.out.println(o.getId());
-                    System.out.println(o.getNomOffre());
-                    System.out.println(o.getDescriptionOffre());
-                    System.out.println(o.getPrixOffre());
-                    System.out.println(o.getReduction());
-                    System.out.println(o.getDateDebutOffre());
-                    System.out.println(o.getDateFinOffre());
-                    if (ServiceOffre.getInstance().deleteOffre(o)) {
-                        Dialog.show("Success", "Offre supprimé avec succés", new Command("OK"));
+                    System.out.println(r.getId());
+                    System.out.println(r.getDescriptionReclamation());
+                    System.out.println(r.getEtatReclamation());
+                    System.out.println(r.getDateReclamation());
+                
+                    if (ServiceReclamation.getInstance().deleteReclamation(r)) {
+                        Dialog.show("Success", "reclamation supprimé avec succés", new Command("OK"));
                     } else {
                         Dialog.show("ERROR", "Erreur de connexion", new Command("OK"));
                     }
@@ -57,8 +56,9 @@ public class DeleteOffreForm extends Form {
                 }
             }
         });
-        addAll(tfID, btnSupprimer);
+        addAll(tfID,btnSupprimerReclam);
        //getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e-> previous.showBack());
     }
 }
+
 

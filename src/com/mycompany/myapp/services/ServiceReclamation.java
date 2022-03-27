@@ -11,6 +11,7 @@ import com.codename1.io.JSONParser;
 import com.codename1.io.NetworkEvent;
 import com.codename1.io.NetworkManager;
 import com.codename1.ui.events.ActionListener;
+import com.mycompany.myapp.entities.Offre;
 import com.mycompany.myapp.entities.Reclamation;
 import com.mycompany.myapp.utils.Statics;
 import java.io.IOException;
@@ -116,6 +117,24 @@ public class ServiceReclamation {
         return reclamations;
     }
       
-   
+   //delete reclam
+      
+        public boolean deleteReclamation(Reclamation r) {
+    
+        String url = Statics.BASE_URL + "/reclamation/deleteReclamationjson?id="+r.getId();
+        //création de l'URL
+        req.setUrl(url);// Insertion de l'URL de notre demande de connexion
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                resultOK = req.getResponseCode() == 200; //Code HTTP 200 OK
+                req.removeResponseListener(this); //Supprimer cet actionListener       
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        System.out.println(resultOK);
+        return resultOK;
+    }
+        
     
 }

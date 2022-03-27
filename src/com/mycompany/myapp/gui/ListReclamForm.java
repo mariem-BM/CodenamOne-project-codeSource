@@ -75,9 +75,9 @@ public class ListReclamForm extends Form {
         Label labeletat_reclamation= new Label("etat");
         Label labeldate_reclamation = new Label("date");
        
-      /* Label labelModifier = new Label("Modifier");
-        Label labelSupprimer = new Label("Supprimer");
-        Label labelDetails = new Label("Details");*/
+      // Label labelModifier = new Label("Modifier");
+        Label labelSupprimerReclam = new Label("Supprimer");
+       /* Label labelDetails = new Label("Details");*/
         
         Container HeadConainter = new Container(gridLayout);
         
@@ -87,9 +87,9 @@ public class ListReclamForm extends Form {
         HeadConainter.add(labeldate_reclamation);
       
         
-       /* HeadConainter.add(labelModifier);
-        HeadConainter.add(labelSupprimer);
-        HeadConainter.add(labelDetails);*/
+       // HeadConainter.add(labelModifier);
+        HeadConainter.add(labelSupprimerReclam);
+      /*  HeadConainter.add(labelDetails);*/
         tempForm.add(HeadConainter);
         
         
@@ -97,15 +97,15 @@ public class ListReclamForm extends Form {
         for (Reclamation r : Reclamations) {
             
             //bouttn suppression
-           /* Label lSupprimer = new Label(" ");
+            Label lSupprimer = new Label(" ");
             lSupprimer.setUIID("NewsTopLine");
             Style supprimerStyle = new Style(lSupprimer.getUnselectedStyle());
             supprimerStyle.setFgColor(0xf21f1f);
             FontImage supprimerImage = FontImage.createMaterial(FontImage.MATERIAL_DELETE, supprimerStyle);
             lSupprimer.setIcon(supprimerImage);
-            lSupprimer.setTextPosition(RIGHT);*/
+            lSupprimer.setTextPosition(RIGHT);
             //on-click delete icon
-           /*lSupprimer.addPointerPressedListener(l -> {
+           lSupprimer.addPointerPressedListener(l -> {
 
                 Dialog dig = new Dialog("Suppresion");
 
@@ -116,11 +116,11 @@ public class ListReclamForm extends Form {
                 }
 
                 // lena chn3aytou l fonction delete 
-                if (ServiceOffre.getInstance().deleteOffre(o)) {
+                if (ServiceReclamation.getInstance().deleteReclamation(r)) {
 
-                    new ListOffreForm(current);
+                    new ListReclamForm(current);
                 }
-            });*/
+            });
            
             // butoon l modif
           /* Label lModifier = new Label(" ");
@@ -170,8 +170,8 @@ public class ListReclamForm extends Form {
             BodyConainter.add(new Label(etat_reclamation));
             BodyConainter.add(new Label(date_reclamation));
           
-          /*  BodyConainter.add(lSupprimer);
-            BodyConainter.add(lModifier);
+            BodyConainter.add(lSupprimer);
+          /*  BodyConainter.add(lModifier);
             BodyConainter.add(lDetails);*/
             tempForm.add(BodyConainter);
 
@@ -199,10 +199,10 @@ public class ListReclamForm extends Form {
                         Label label3 = (Label) mb.getComponentAt(2);
                         String line3 = label3.getText();
                         
-                        /*Label label4 = (Label) mb.getComponentAt(3);
+                        Label label4 = (Label) mb.getComponentAt(3);
                         String line4 = label4.getText();
                         
-                        Label label5 = (Label) mb.getComponentAt(4);
+                       /* Label label5 = (Label) mb.getComponentAt(4);
                         String line5 = label5.getText();
                         
                         Label label6 = (Label) mb.getComponentAt(5);
@@ -222,9 +222,9 @@ public class ListReclamForm extends Form {
                         String line11 = label11.getText();*/
                         boolean show = line1 != null && line1.toLowerCase().indexOf(text) > -1
                                 || line2 != null && line2.toLowerCase().indexOf(text) > -1
-                                || line3 != null && line3.toLowerCase().indexOf(text) > -1;
-                                /*|| line4 != null && line4.toLowerCase().indexOf(text) > -1
-                                || line5 != null && line5.toLowerCase().indexOf(text) > -1
+                                || line3 != null && line3.toLowerCase().indexOf(text) > -1
+                                || line4 != null && line4.toLowerCase().indexOf(text) > -1;
+                              /*  || line5 != null && line5.toLowerCase().indexOf(text) > -1
                                 || line6 != null && line6.toLowerCase().indexOf(text) > -1
                                 || line7 != null && line7.toLowerCase().indexOf(text) > -1
                                 || line8 != null && line8.toLowerCase().indexOf(text) > -1
