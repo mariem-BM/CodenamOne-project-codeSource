@@ -47,7 +47,7 @@ public class ServiceReclamation {
             public boolean addReclamation(Reclamation r) {
         System.out.println(r);
       // String url = Statics.BASE_URL + "offre/ajoutOffrejson/" + o.getNomOffre()+"?description_offre=" + o.getDescriptionOffre() + "&prix_offre=" + o.getPrixOffre()+ "&reduction=" + o.getReduction()+ "&date_debut_offre=" + o.getDateDebutOffre()+ "&date_fin_offre=" + o.getDateFinOffre();
-  String url = Statics.BASE_URL + "/reclamation/ajoutReclamationjson/1?description_reclamation="+r.getDescriptionReclamation();
+  String url = Statics.BASE_URL + "/reclamation/ajoutReclamationjson/1?description_reclamation="+r.getDescriptionReclamation()+"&user="+r.getUser();
     
        req.setUrl(url);
 
@@ -140,7 +140,7 @@ public class ServiceReclamation {
          
       public boolean modifReclamation(Reclamation r) { 
               
-        String url = Statics.BASE_URL + "/reclamation/modifReclamationjson/"+r.getId()+"/"+r.getUser()+"?&description_reclamation="+r.getDescriptionReclamation();
+        String url = Statics.BASE_URL + "/reclamation/modifReclamationjson?id="+r.getId()+"&description_reclamation="+r.getDescriptionReclamation();
 //création de l'URL
       
         req.setUrl(url);// Insertion de l'URL de notre demande de connexion

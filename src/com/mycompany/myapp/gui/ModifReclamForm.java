@@ -36,7 +36,7 @@ public class ModifReclamForm extends  Form {
          tfdescription_reclamation.setUIID("TextFieldBlack");
         //TextField tfdate_reclamation= new TextField(String.valueOf(r.getDateReclamation()), "date reclamation");
        // TextField tfetat_reclamation= new TextField(String.valueOf(r.getEtatReclamation()), "etat reclamation");
-       TextField tfuser= new TextField(String.valueOf(r.getUser()), "");
+      // TextField tfuser= new TextField(String.valueOf(r.getUser()), "");
        
         Button btnModifierReclam = new Button("Modifier");
         Button next = new Button("suivant");
@@ -50,16 +50,16 @@ public class ModifReclamForm extends  Form {
                      System.out.println(tfdescription_reclamation.getText());
                       //System.out.println(tfdate_reclamation.getText());
                        //System.out.println(tfetat_reclamation.getText());
-                        System.out.println(tfuser.getText());
+                      //  System.out.println(tfuser.getText());
                  
                     // Offre o = new Offre(Integer.parseInt(tfID.getText()),tfnom_offre.getText(),tfdescription_offre.getText(), Integer.parseInt(tfprix_offre.getText()),Integer.parseInt(tfreduction.getText()),tfdate_debut_offre.getText().toString(),tfdate_fin_offre.getText().toString());
-                    Reclamation r = new Reclamation(Integer.parseInt(tfID.getText()),tfdescription_reclamation.getText().toString(),Integer.parseInt(tfuser.getText()));
+                    Reclamation r = new Reclamation(Integer.parseInt(tfID.getText()),tfdescription_reclamation.getText().toString());
                     System.out.println(r.getId());
                     System.out.println(r.getDescriptionReclamation());
-                    System.out.println(r.getUser());
+                  //  System.out.println(r.getUser());
                    
                     if (ServiceReclamation.getInstance().modifReclamation(r)) {
-                        Dialog.show("Success", "Offre modifié avec succés", new Command("OK"));
+                        Dialog.show("Success", "Réclamation modifié avec succés", new Command("OK"));
                         
                     } else {
                         Dialog.show("ERROR", "connexion echoué", new Command("OK"));
@@ -69,7 +69,7 @@ public class ModifReclamForm extends  Form {
             }
         });
         next.addActionListener(e -> new ListReclamForm(current));
-        addAll(tfID,tfdescription_reclamation,tfuser,btnModifierReclam,next);
+        addAll(tfID,tfdescription_reclamation,btnModifierReclam,next);
       
     }
 }
