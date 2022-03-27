@@ -91,8 +91,8 @@ public class ListOffreForm extends  Form {
         
        
        /* HeadConainter.add(labelSupprimer);
-        HeadConainter.add(labelModifier);
-        HeadConainter.add(labelDetails);*/
+        HeadConainter.add(labelModifier);*/
+        HeadConainter.add(labelDetails);
         
         tempForm.add(HeadConainter);
         

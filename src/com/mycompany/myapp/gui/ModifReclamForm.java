@@ -59,7 +59,7 @@ public class ModifReclamForm extends  Form {
                   //  System.out.println(r.getUser());
                    
                     if (ServiceReclamation.getInstance().modifReclamation(r)) {
-                        Dialog.show("Success", "Réclamation modifié avec succés", new Command("OK"));
+                        Dialog.show("Succes", "Réclamation modifié avec succés", new Command("OK"));
                         
                     } else {
                         Dialog.show("ERROR", "connexion echoué", new Command("OK"));

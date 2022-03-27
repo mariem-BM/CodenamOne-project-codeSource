@@ -74,7 +74,7 @@ public class ListReclamForm extends Form {
         Label labeldescription_reclamation = new Label("Description");
         Label labeletat_reclamation= new Label("etat");
         Label labeldate_reclamation = new Label("date");
-         Label labeluser = new Label("user");
+         //Label labeluser = new Label("user");
        
        Label labelModifierReclam = new Label("Modifier");
         Label labelSupprimerReclam = new Label("Supprimer");
@@ -86,7 +86,7 @@ public class ListReclamForm extends Form {
         HeadConainter.add(labeldescription_reclamation);
         HeadConainter.add(labeletat_reclamation);
         HeadConainter.add(labeldate_reclamation);
-        HeadConainter.add(labeluser);
+       // HeadConainter.add(labeluser);
       
         
        /* HeadConainter.add(labelModifierReclam);
@@ -158,22 +158,18 @@ public class ListReclamForm extends Form {
           /* String etat_reclamation = String.valueOf(r.getEtatReclamation());*/
           // String etat_reclamation = new Label("etat_reclamation : "+r.getEtatReclamation());
            String etat_reclamation = String.valueOf(r.getEtatReclamation());
+          
          
-        /*  if(r.getEtatReclamation() == "" ) {
-            r.setEtatReclamation("non Traitée");
-        }
-        else 
-            r.setEtatReclamation("Traitée");
-        */
+        
            //  $reclamation->setEtatReclamation("envoyé");
             
             String date_reclamation = String.valueOf(r.getDateReclamation());
-            String user = String.valueOf(r.getUser());
+           // String user = String.valueOf(r.getUser());
             
             BodyConainter.add(new Label(description_reclamation));
             BodyConainter.add(new Label(etat_reclamation));
             BodyConainter.add(new Label(date_reclamation));
-            BodyConainter.add(new Label(user));
+            //BodyConainter.add(new Label(user));
           
             BodyConainter.add(lSupprimer);
             BodyConainter.add(lModifier);
