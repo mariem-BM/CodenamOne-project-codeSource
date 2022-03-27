@@ -26,7 +26,7 @@ public class HomeReclamForm extends Form{
         setLayout(BoxLayout.y());
         
         
-     Button btnAddReclamation = new Button("Ajouter une reclamation");
+     Button btnAddReclamation = new Button("Réclamer");
     Button btnListReclamations = new Button("Consulter les reclamations");
       
        

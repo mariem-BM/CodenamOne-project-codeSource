@@ -69,11 +69,11 @@ public class ListReclamForm extends Form {
         GridLayout gridLayout = new GridLayout(1, 10);
        // gridLayout.setHgap(25);
 
-         Font fnt = Font.createSystemFont(Font.FACE_SYSTEM, Font.STYLE_BOLD, Font.SIZE_SMALL);
+         Font fnt = Font.createSystemFont(Font.FACE_SYSTEM, Font.STYLE_BOLD, Font.SIZE_MEDIUM);
         Label labelId = new Label("id");
-        Label labeldescription_reclamation = new Label("Description reclamation");
-        Label labeletat_reclamation= new Label("etat reclamation");
-        Label labeldate_reclamation = new Label("date reclamation");
+        Label labeldescription_reclamation = new Label("Description");
+        Label labeletat_reclamation= new Label("etat");
+        Label labeldate_reclamation = new Label("date");
        
       /* Label labelModifier = new Label("Modifier");
         Label labelSupprimer = new Label("Supprimer");
@@ -239,7 +239,7 @@ public class ListReclamForm extends Form {
             }
         }, 4);
 
-        Button Comment = new Button("ajouter reclamation");
+        Button Comment = new Button("réclamer");
         Comment.addActionListener(e -> new AjoutReclamForm());
         tempForm.show();
         tempForm.setTransitionOutAnimator(CommonTransitions.createSlide(CommonTransitions.SLIDE_HORIZONTAL, false, 250));
@@ -247,5 +247,11 @@ public class ListReclamForm extends Form {
                 e -> new HomeReclamForm(current).showBack()); // Revenir vers l'interface précédente
         return tempForm;
 
+    }
+  
+   private void updateArrowPosition(Button btn, Label l) {
+        
+        l.getUnselectedStyle().setMargin(LEFT, btn.getX() + btn.getWidth()  / 2  - l.getWidth() / 2 );
+        l.getParent().repaint();
     }
 }
