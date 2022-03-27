@@ -89,7 +89,7 @@ public class ListReclamForm extends Form {
         HeadConainter.add(labeluser);
       
         
-        HeadConainter.add(labelModifierReclam);
+       /* HeadConainter.add(labelModifierReclam);
         HeadConainter.add(labelSupprimerReclam);
       /*  HeadConainter.add(labelDetails);*/
         tempForm.add(HeadConainter);

@@ -89,9 +89,10 @@ public class ListOffreForm extends  Form {
         HeadConainter.add(labeldate_debut_offre);
         HeadConainter.add(labeldate_fin_offre);
         
+       
+       /* HeadConainter.add(labelSupprimer);
         HeadConainter.add(labelModifier);
-        HeadConainter.add(labelSupprimer);
-        HeadConainter.add(labelDetails);
+        HeadConainter.add(labelDetails);*/
         
         tempForm.add(HeadConainter);
         
