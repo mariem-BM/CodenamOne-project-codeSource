@@ -66,7 +66,7 @@ public class ListReclamForm extends Form {
         tempForm.setTitle("Reclamations");
         tempForm.setLayout(new BoxLayout(BoxLayout.Y_AXIS));
         tempForm.setTransitionOutAnimator(CommonTransitions.createEmpty());
-        GridLayout gridLayout = new GridLayout(1, 12);
+        GridLayout gridLayout = new GridLayout(1, 10);
        // gridLayout.setHgap(25);
 
          Font fnt = Font.createSystemFont(Font.FACE_SYSTEM, Font.STYLE_BOLD, Font.SIZE_SMALL);
@@ -74,7 +74,7 @@ public class ListReclamForm extends Form {
         Label labeldescription_reclamation = new Label("Description reclamation");
         Label labeletat_reclamation= new Label("etat reclamation");
         Label labeldate_reclamation = new Label("date reclamation");
-        
+       
       /* Label labelModifier = new Label("Modifier");
         Label labelSupprimer = new Label("Supprimer");
         Label labelDetails = new Label("Details");*/
@@ -153,7 +153,17 @@ public class ListReclamForm extends Form {
                     
             BodyConainter.add(new Label(String.valueOf(r.getId())));
             String description_reclamation = String.valueOf(r.getDescriptionReclamation());
-            String etat_reclamation = String.valueOf(r.getEtatReclamation());
+          /* String etat_reclamation = String.valueOf(r.getEtatReclamation());*/
+          // String etat_reclamation = new Label("etat_reclamation : "+r.getEtatReclamation());
+                String etat_reclamation = String.valueOf(r.getEtatReclamation());
+        /*  if(r.getEtatReclamation() == "" ) {
+            r.setEtatReclamation("non Traitée");
+        }
+        else 
+            r.setEtatReclamation("Traitée");
+        */
+           //  $reclamation->setEtatReclamation("envoyé");
+            
             String date_reclamation = String.valueOf(r.getDateReclamation());
             
             BodyConainter.add(new Label(description_reclamation));

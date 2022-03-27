@@ -15,7 +15,7 @@ public class Reclamation {
     
     private int id;
     private String description_reclamation;
-    private String etat_reclamation;
+   private String etat_reclamation;
     private String date_reclamation;
 
     public Reclamation() {

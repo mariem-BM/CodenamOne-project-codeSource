@@ -77,10 +77,19 @@ public class ServiceReclamation {
                 float id = Float.parseFloat(obj.get("id").toString());
                 r.setId((int)id);
                 
+               /* float etat_reclamation = Float.parseFloat(obj.get("etat_reclamation").toString());
+                r.setEtatReclamation((int)etat_reclamation);*/
+                
                 r.setDescriptionReclamation(obj.get("description_reclamation").toString());
-                //r.setEtatReclamation(obj.get("etat_reclamation").toString());
+                
+                 if(r.getEtatReclamation() == "" ) {
+            r.setEtatReclamation("non Traitée");
+        }
+        else 
+            r.setEtatReclamation("Traitée");
+         // r.setEtatReclamation(obj.get("etat_reclamation").toString());
                 r.setDateReclamation(obj.get("date_reclamation").toString());
-               
+             
                 reclamations.add(r);
             }
             
