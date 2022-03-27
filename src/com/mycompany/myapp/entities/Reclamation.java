@@ -74,7 +74,7 @@ public class Reclamation {
     }
 
     public void setEtatReclamation(String etat_reclamation) {
-        this.etat_reclamation = etat_reclamation;
+        this.etat_reclamation = "envoye";
     }
 
     public String getDateReclamation() {
