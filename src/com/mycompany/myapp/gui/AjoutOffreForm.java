@@ -45,7 +45,7 @@ public class AjoutOffreForm extends Form {
         TextField tfdate_fin_offre = new TextField("", "date fin offre");
         tfdate_fin_offre.setUIID("TextFieldBlack");
         Button btnAddOffre = new Button("Ajouter l'Offre");
-        Button next = new Button("suivant");
+        Button next = new Button("retour");
         btnAddOffre.addActionListener(new ActionListener() {
             
             

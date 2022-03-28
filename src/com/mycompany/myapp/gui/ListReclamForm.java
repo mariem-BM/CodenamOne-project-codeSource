@@ -6,6 +6,7 @@
 package com.mycompany.myapp.gui;
 
 import com.codename1.components.FloatingActionButton;
+import static com.codename1.io.Log.e;
 import com.codename1.ui.Button;
 import com.codename1.ui.Component;
 import static com.codename1.ui.Component.LEFT;
@@ -79,6 +80,7 @@ public class ListReclamForm extends Form {
        Label labelModifierReclam = new Label("Modifier");
        Label labelSupprimerReclam = new Label("Supprimer");
         Label labelDetails = new Label("Details");
+        // Label labelDetails = new Label("Statistiques");
         
         Container HeadConainter = new Container(gridLayout);
         
@@ -86,7 +88,7 @@ public class ListReclamForm extends Form {
         HeadConainter.add(labeldescription_reclamation);
         HeadConainter.add(labeletat_reclamation);
         HeadConainter.add(labeldate_reclamation);
-       // HeadConainter.add(labeluser);
+      //  HeadConainter.add(labeluser);
       
         
         HeadConainter.add("");
@@ -216,7 +218,7 @@ public class ListReclamForm extends Form {
                        /* Label label8 = (Label) mb.getComponentAt(7);
                         String line8 = label8.getText();
                         
-                        Label label9 = (Label) mb.getComponentAt(8);
+                       /* Label label9 = (Label) mb.getComponentAt(8);
                         String line9 = label9.getText();*/
                         /*Label label10 = (Label) mb.getComponentAt(9);
                         String line10 = label10.getText();
@@ -229,8 +231,8 @@ public class ListReclamForm extends Form {
                                 || line5 != null && line5.toLowerCase().indexOf(text) > -1
                                 || line6 != null && line6.toLowerCase().indexOf(text) > -1
                                 || line7 != null && line7.toLowerCase().indexOf(text) > -1;
-                                /*|| line8 != null && line8.toLowerCase().indexOf(text) > -1
-                                || line9 != null && line9.toLowerCase().indexOf(text) > -1;*/
+                              //  || line8 != null && line8.toLowerCase().indexOf(text) > -1;
+                                //|| line9 != null && line9.toLowerCase().indexOf(text) > -1;
                                /* || line10 != null && line10.toLowerCase().indexOf(text) > -1
                                 || line11 != null && line11.toLowerCase().indexOf(text) > -1;*/
                         mb.setHidden(!show);
@@ -240,17 +242,20 @@ public class ListReclamForm extends Form {
                 tempForm.getContentPane().animateLayout(150);
             }
         }, 7);
-
+ 
         Button Comment = new Button("réclamer");
         Comment.addActionListener(e -> new AjoutReclamForm());
         tempForm.show();
         tempForm.setTransitionOutAnimator(CommonTransitions.createSlide(CommonTransitions.SLIDE_HORIZONTAL, false, 250));
         tempForm.getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK,
                 e -> new HomeReclamForm(current).showBack()); // Revenir vers l'interface précédente
+        
+       
         return tempForm;
 
     }
-  
+        
+         
    private void updateArrowPosition(Button btn, Label l) {
         
         l.getUnselectedStyle().setMargin(LEFT, btn.getX() + btn.getWidth()  / 2  - l.getWidth() / 2 );

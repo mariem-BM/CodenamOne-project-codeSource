@@ -29,10 +29,14 @@ public class HomeReclamForm extends Form{
      Button btnAddReclamation = new Button("Réclamer");
     Button btnListReclamations = new Button("Consulter les reclamations");
       
-       
+       Button btnStatReclam = new Button("Statistiques des réclamations");
+    
+        
      btnAddReclamation.addActionListener(e-> new AjoutReclamForm().show());
+     
      btnListReclamations.addActionListener(e-> new ListReclamForm(current));
-      addAll(btnAddReclamation, btnListReclamations);
+      btnStatReclam.addActionListener(e-> new StatistiqueReclamForm(current).show());
+      addAll(btnAddReclamation, btnListReclamations,btnStatReclam);
           
      
      
