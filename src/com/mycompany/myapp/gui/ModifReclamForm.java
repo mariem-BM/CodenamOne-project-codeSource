@@ -39,7 +39,7 @@ public class ModifReclamForm extends  Form {
       // TextField tfuser= new TextField(String.valueOf(r.getUser()), "");
        
         Button btnModifierReclam = new Button("Modifier");
-        Button next = new Button("suivant");
+        Button next = new Button("retour");
         btnModifierReclam.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {

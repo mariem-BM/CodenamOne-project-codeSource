@@ -47,7 +47,7 @@ public class ModifOffreForm extends Form{
       
         
         Button btnModifier = new Button("Modifier");
-        Button next = new Button("suivant");
+        Button next = new Button("retour");
         btnModifier.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent evt) {

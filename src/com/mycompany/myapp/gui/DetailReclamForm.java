@@ -26,7 +26,7 @@ public class DetailReclamForm extends Form{
      DetailReclamForm(Reclamation r) {
                  /* *** *CONFIG SCREEN* *** */
         current = this;
-        setTitle("Reclamation Details");
+        setTitle("Detail reclamation");
         setLayout(BoxLayout.y());
         /* *** *YOUR CODE GOES HERE* *** */
         /* *l affichage img* */

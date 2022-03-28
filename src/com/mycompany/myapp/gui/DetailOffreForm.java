@@ -3,45 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/*package com.mycompany.myapp.gui;
+package com.mycompany.myapp.gui;
 
 import com.codename1.ui.Button;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BoxLayout;
 import com.mycompany.myapp.entities.Offre;
+import com.mycompany.myapp.entities.Reclamation;
 import com.mycompany.myapp.services.ServiceOffre;
+import com.mycompany.myapp.services.ServiceReclamation;
 
 /**
  *
  * @author ASUS
  */
-/*public class DetailOffreForm extends Form {
+public class DetailOffreForm extends Form {
+  Form current;
+     ServiceOffre ServiceOffre = new ServiceOffre();
     
-     Form current;
      DetailOffreForm(Offre o) {
-        setTitle("Détail de l'offre");
+                 
+        current = this;
+        setTitle("Details de l'Offre");
         setLayout(BoxLayout.y());
         
-        o = ServiceOffre.getInstance().DetailOffre(o);
-          
-        Label labelid = new Label(String.valueOf(o.getId()),"id_offre");
-        Label labelnom_offre= new Label(String.valueOf(o.getNomOffre()), "nom_offre");
-        Label labeldescription_offre= new Label(String.valueOf(o.getDescriptionOffre()), "descriptionçoffre");
-        Label labelprix_offre = new Label(String.valueOf(o.getPrixOffre()),"prix_offre");
-        Label labelreduction= new Label(String.valueOf(o.getReduction()), "reduction");
-        Label labeldate_debut_offre = new Label(String.valueOf(o.getDateDebutOffre()),"date_debut_offre ");
-        Label labeldate_fin_offre = new Label(String.valueOf(o.getDateFinOffre()), "date_fin_offre ");
-      
+        /* *** *YOUR CODE GOES HERE* *** */
+        /* *l affichage img* */
        
-        Button suivant = new Button("suivant");
-                
-        suivant.addActionListener(e -> new ListOffreForm(current));
-        addAll(suivant,labelid,labelnom_offre,labeldescription_offre,labelprix_offre,labelreduction,labeldate_debut_offre,labeldate_fin_offre);
-       
+        Label labelnom_offre = new Label("nom offre :"+o.getNomOffre());
+        Label labeldescription_offre= new Label("description offre :"+o.getDescriptionOffre());
+        Label labelprix_offre= new Label("prix offre :"+o.getPrixOffre());
+        Label labelreduction= new Label("reduction :"+o.getReduction());
+        Label labeldate_debut_offre= new Label("date debut offre:"+o.getDateDebutOffre());
+         Label labeldate_fin_offre= new Label("date fin offre :"+o.getDateFinOffre());
+         
+        Button next = new Button("Retour ");
+        next.addActionListener(e -> new ListOffreForm(current));
+        addAll(labelnom_offre, labeldescription_offre, labelprix_offre,labelreduction,labeldate_debut_offre,labeldate_fin_offre,next);
+     
     }
 }
-    
-    
-
-*/
