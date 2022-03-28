@@ -181,7 +181,7 @@ public class ListOffreForm extends  Form {
             BodyConainter.add(lSupprimer);
             BodyConainter.add(lModifier);
        
-           // BodyConainter.add(lDetails);
+            BodyConainter.add(lDetails);
             tempForm.add(BodyConainter);
 
         }
