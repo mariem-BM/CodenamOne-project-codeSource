@@ -66,7 +66,7 @@ public class ListReclamForm extends Form {
         tempForm.setTitle("Reclamations");
         tempForm.setLayout(new BoxLayout(BoxLayout.Y_AXIS));
         tempForm.setTransitionOutAnimator(CommonTransitions.createEmpty());
-        GridLayout gridLayout = new GridLayout(1, 6);
+        GridLayout gridLayout = new GridLayout(1, 7);
        // gridLayout.setHgap(25);
 
          Font fnt = Font.createSystemFont(Font.FACE_SYSTEM, Font.STYLE_BOLD, Font.SIZE_MEDIUM);
@@ -74,11 +74,11 @@ public class ListReclamForm extends Form {
         Label labeldescription_reclamation = new Label("Description");
         Label labeletat_reclamation= new Label("etat");
         Label labeldate_reclamation = new Label("date");
-         //Label labeluser = new Label("user");
+        Label labeluser = new Label("user");
        
        Label labelModifierReclam = new Label("Modifier");
-        Label labelSupprimerReclam = new Label("Supprimer");
-        //Label labelDetails = new Label("Details");
+       Label labelSupprimerReclam = new Label("Supprimer");
+        Label labelDetails = new Label("Details");
         
         Container HeadConainter = new Container(gridLayout);
         
@@ -89,9 +89,9 @@ public class ListReclamForm extends Form {
        // HeadConainter.add(labeluser);
       
         
-       /* HeadConainter.add(labelModifierReclam);
-        HeadConainter.add(labelSupprimerReclam);*/
-        //HeadConainter.add(labelDetails);
+        HeadConainter.add("");
+      HeadConainter.add("");
+        HeadConainter.add(labelDetails);
         tempForm.add(HeadConainter);
         
         
@@ -138,18 +138,19 @@ public class ListReclamForm extends Form {
             });
            
             //boutton detail offre
-           /* Label lDetails  = new Label(" ");
+            Label lDetails  = new Label(" ");
             lDetails.setUIID("NewsTopLine");
             Style DetailsStyle = new Style(lDetails.getUnselectedStyle());
             DetailsStyle.setFgColor(0xf7ad02);
-            FontImage dFontImage = FontImage.createMaterial(FontImage.MATERIAL_MODE_EDIT, DetailsStyle);
+            FontImage dFontImage = FontImage.createMaterial(FontImage.MATERIAL_MORE, DetailsStyle);
             lDetails.setIcon(dFontImage);
             lDetails.setTextPosition(LEFT);
             //on click ala butoon details
             lDetails.addPointerPressedListener(l -> {
                 new DetailReclamForm(r).show();
+                
             });
-            */
+            
             Container BodyConainter = new Container(gridLayout);
              
                     
@@ -173,7 +174,7 @@ public class ListReclamForm extends Form {
           
             BodyConainter.add(lSupprimer);
             BodyConainter.add(lModifier);
-           //BodyConainter.add(lDetails);
+           BodyConainter.add(lDetails);
             tempForm.add(BodyConainter);
 
         }
@@ -209,7 +210,7 @@ public class ListReclamForm extends Form {
                         Label label6 = (Label) mb.getComponentAt(5);
                         String line6 = label6.getText();
                         
-                        /*Label label7 = (Label) mb.getComponentAt(6);
+                        Label label7 = (Label) mb.getComponentAt(6);
                         String line7 = label7.getText();
                         
                        /* Label label8 = (Label) mb.getComponentAt(7);
@@ -226,9 +227,9 @@ public class ListReclamForm extends Form {
                                 || line3 != null && line3.toLowerCase().indexOf(text) > -1
                                 || line4 != null && line4.toLowerCase().indexOf(text) > -1
                                 || line5 != null && line5.toLowerCase().indexOf(text) > -1
-                                || line6 != null && line6.toLowerCase().indexOf(text) > -1;
-                               /* || line7 != null && line7.toLowerCase().indexOf(text) > -1
-                                || line8 != null && line8.toLowerCase().indexOf(text) > -1
+                                || line6 != null && line6.toLowerCase().indexOf(text) > -1
+                                || line7 != null && line7.toLowerCase().indexOf(text) > -1;
+                                /*|| line8 != null && line8.toLowerCase().indexOf(text) > -1
                                 || line9 != null && line9.toLowerCase().indexOf(text) > -1;*/
                                /* || line10 != null && line10.toLowerCase().indexOf(text) > -1
                                 || line11 != null && line11.toLowerCase().indexOf(text) > -1;*/
@@ -238,7 +239,7 @@ public class ListReclamForm extends Form {
                 }
                 tempForm.getContentPane().animateLayout(150);
             }
-        }, 6);
+        }, 7);
 
         Button Comment = new Button("réclamer");
         Comment.addActionListener(e -> new AjoutReclamForm());

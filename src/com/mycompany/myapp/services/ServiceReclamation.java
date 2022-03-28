@@ -33,7 +33,7 @@ public class ServiceReclamation {
     //initilisation connection request 
     private ConnectionRequest req;
     
-    private ServiceReclamation() {
+    public ServiceReclamation() {
          req = new ConnectionRequest();
     }
     

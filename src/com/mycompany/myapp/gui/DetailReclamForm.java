@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-/*package com.mycompany.myapp.gui;
+package com.mycompany.myapp.gui;
 
 import com.codename1.ui.Button;
 import com.codename1.ui.Form;
@@ -18,30 +18,26 @@ import com.mycompany.myapp.services.ServiceReclamation;
  *
  * @author ASUS
  */
-/*public class DetailReclamForm extends Form{
+public class DetailReclamForm extends Form{
     
-Form current;
+ Form current;
+     ServiceReclamation ServiceReclam = new ServiceReclamation();
+    
      DetailReclamForm(Reclamation r) {
-        setTitle("Détail de l'offre");
+                 /* *** *CONFIG SCREEN* *** */
+        current = this;
+        setTitle("Reclamation Details");
         setLayout(BoxLayout.y());
-        
-        r = ServiceReclamation.getInstance().DetailReclamation(r);
-          
-        Label labelid = new Label(String.valueOf(r.getId()),"id_offre");
-        Label labeldescription_reclamation= new Label(String.valueOf(r.getDescriptionReclamation()), "nom_offre");
-        Label labeldate_reclamation= new Label(String.valueOf(r.getDateReclamation()), "descriptionçoffre");
-        Label labeletat_reclamation = new Label(String.valueOf(r.getEtatReclamation()),"prix_offre");
+        /* *** *YOUR CODE GOES HERE* *** */
+        /* *l affichage img* */
        
-      
-       
-        Button suivant = new Button("suivant");
-                
-        suivant.addActionListener(e -> new ListOffreForm(current));
-        addAll(suivant,labelid,labeldescription_reclamation, labeldate_reclamation, labeletat_reclamation);
-       
+        Label description_reclamation = new Label("Description reclam :"+r.getDescriptionReclamation());
+        Label date_reclamation = new Label("date reclamation :"+r.getDateReclamation());
+        Label etat_reclamation = new Label("etat reclamation :"+r.getEtatReclamation());
+         Button next = new Button("Retour ");
+        next.addActionListener(e -> new ListReclamForm(current));
+        addAll(description_reclamation, date_reclamation, etat_reclamation,next);
+     
     }
+
 }
-    */
-    
-
-

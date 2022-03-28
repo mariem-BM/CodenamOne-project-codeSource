@@ -30,7 +30,7 @@ public class AjoutReclamForm extends Form {
     
     Form current;
     public AjoutReclamForm() {
-        setTitle("Ajouter une nouvelle reclamation");
+        setTitle("réclamer");
         setLayout(BoxLayout.y());
         
         TextField tfdescription_reclamation = new TextField("","description reclamation");
@@ -39,7 +39,7 @@ public class AjoutReclamForm extends Form {
         //addStringValue("date_reclamation",datePicker);
         Button btnAddReclamation = new Button("Reclamer");
          //btnAddReclamation.setBackground(Color.red);
-        Button next = new Button("suivant");
+        Button next = new Button("retour");
         
         btnAddReclamation.addActionListener(new ActionListener() {
             @Override

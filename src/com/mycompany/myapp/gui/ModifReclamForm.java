@@ -26,7 +26,7 @@ public class ModifReclamForm extends  Form {
     
     Form current;
     ModifReclamForm(Reclamation r) {
-        setTitle("Modifier offre");
+        setTitle("Modifier réclamatione");
         setLayout(BoxLayout.y());
 
         TextField tfID = new TextField(String.valueOf(r.getId()), "id_reclam");
