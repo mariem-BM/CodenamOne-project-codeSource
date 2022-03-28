@@ -34,8 +34,10 @@ public class HomeOffreForm extends Form{
     // Button btntriOffreByReductionA = new Button("Ordered By Date");
     
     Button btnTriOffreReductionA = new Button("Offres");
+    // Button triOffreDateDebutA = new Button("Offres");
     
-         btnTriOffreReductionA.addActionListener(e-> new triOffreByReductionAForm().show());
+    btnTriOffreReductionA.addActionListener(e-> new triOffreByDateDebutAForm().show());
+   //  btnTriOffreReductionA.addActionListener(e-> new triOffreByDateFinAForm().show());
        
      btnAddOffre.addActionListener(e-> new AjoutOffreForm().show());
       btnListOffres.addActionListener(e-> new ListOffreForm(current));

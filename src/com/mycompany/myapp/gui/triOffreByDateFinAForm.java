@@ -20,13 +20,16 @@ import java.util.Collections;
  *
  * @author ASUS
  */
-public class triOffreByReductionAForm extends Form  {
+public class triOffreByDateFinAForm extends Form  {
     
-    Form current;
+    
+      Form current;
     ArrayList<Offre> offreArrayList = new ArrayList<>();
     ServiceOffre serviceOffre = new ServiceOffre();
-    public triOffreByReductionAForm(){
-        /* *** *CONFIG SCREEN* *** */
+    
+    public triOffreByDateFinAForm(){
+        
+         /* *** *CONFIG SCREEN* *** */
         current = this;
         setTitle("Offres");
         setLayout(BoxLayout.y());
@@ -34,7 +37,8 @@ public class triOffreByReductionAForm extends Form  {
         offreArrayList = serviceOffre.displayOffres();
         Collections.reverse(offreArrayList);
         fillData();
-        /* *** *SEARCHBAR* *** */
+        
+         /* *** *SEARCHBAR* *** */
         getToolbar().addSearchCommand(e -> {
             String text = (String) e.getSource();
             if (text == null || text.length() == 0) {
@@ -54,7 +58,7 @@ public class triOffreByReductionAForm extends Form  {
                     String line4 = mb.getTextLine4();
                     // String line5 = mb.getTextLine5();
                     
-                    boolean show = line1 != null && line1.toLowerCase().indexOf(text) > -1 ||
+                        boolean show = line1 != null && line1.toLowerCase().indexOf(text) > -1 ||
                             line2 != null && line2.toLowerCase().indexOf(text) > -1;
                     mb.setHidden(!show);
                     mb.setVisible(show);
@@ -64,7 +68,8 @@ public class triOffreByReductionAForm extends Form  {
             }
         }, 6);
         
-         /* *** *OVERFLOW MENU* *** */
+        
+       /* *** *OVERFLOW MENU* *** */
        /* getToolbar().addCommandToOverflowMenu("Stats", FontImage.createMaterial(FontImage.MATERIAL_PIE_CHART, UIManager.getInstance().getComponentStyle("TitleCommand")), (evt) -> {
             new StatFormReservation(current).show();
         });*/
@@ -84,7 +89,7 @@ public class triOffreByReductionAForm extends Form  {
             new HomeForm(current).show();
         });
         getToolbar().addCommandToLeftSideMenu("My Reservation", FontImage.createMaterial(FontImage.MATERIAL_ARCHIVE, UIManager.getInstance().getComponentStyle("TitleCommand")), (evt) -> {
-            new triOffreByReductionAForm().show();
+            new triOffreByDateDebutAForm().show();
         });
     }
   public void fillData() {
@@ -93,7 +98,7 @@ public class triOffreByReductionAForm extends Form  {
              
             multiButton.setTextLine1(o.getNomOffre());
             multiButton.setTextLine3(o.getDateDebutOffre()+"Date debut");
-             multiButton.setTextLine2(o.getDateDebutOffre()+"");
+             multiButton.setTextLine2(o.getDateFinOffre()+"");
              multiButton.setTextLine4(o.getPrixOffre()+"");
            /* multiButton.setTextLine3(o.getPrixOffre()+"");
             multiButton.setTextLine4(o.getReduction()+"");*/

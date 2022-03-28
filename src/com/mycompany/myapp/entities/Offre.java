@@ -120,6 +120,19 @@ public class Offre {
         public int compare(Offre o1, Offre o2) {
             return (int) (o1.getDateDebutOffre().toLowerCase().compareTo(o2.getDateDebutOffre().toLowerCase()));
         }
-    };  
+    };
+   
+    public static Comparator<Offre> triOffreDateFinA = new Comparator<Offre>() {
+        @Override
+        public int compare(Offre o1, Offre o2) {
+            return (int) (o1.getDateFinOffre().toLowerCase().compareTo(o2.getDateFinOffre().toLowerCase()));
+        }
+    };
     
+    public static Comparator<Offre> triOffreNomA = new Comparator<Offre>() {
+        @Override
+        public int compare(Offre o1, Offre o2) {
+            return (int) (o1.getNomOffre().toLowerCase().compareTo(o2.getNomOffre().toLowerCase()));
+        }
+    };
 }
