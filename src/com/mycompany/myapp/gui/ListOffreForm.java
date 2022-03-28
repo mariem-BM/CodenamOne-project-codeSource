@@ -67,7 +67,7 @@ public class ListOffreForm extends  Form {
        // gridLayout.setHgap(25);
 
          Font fnt = Font.createSystemFont(Font.FACE_SYSTEM, Font.STYLE_BOLD, Font.SIZE_SMALL);
-        Label labelId = new Label("id");
+      //  Label labelId = new Label("id");
         Label labelnom_offre = new Label("Nom");
         Label labeldescription_offre = new Label("Description");
         Label labelprix_offre = new Label("Prix");
@@ -83,15 +83,17 @@ public class ListOffreForm extends  Form {
         
         Container HeadConainter = new Container(gridLayout);
         
-        HeadConainter.add(labelId);
+       // HeadConainter.add(labelId);
         HeadConainter.add(labelnom_offre);
         HeadConainter.add(labeldescription_offre);
         HeadConainter.add(labelprix_offre);
         HeadConainter.add(labelreduction);
         HeadConainter.add(labeldate_debut_offre);
+        HeadConainter.add(labeldate_fin_offre);
         HeadConainter.add(labelTri);
         
-        HeadConainter.add(labeldate_fin_offre);
+         
+        HeadConainter.add("");
         HeadConainter.add("");
         HeadConainter.add("");
         HeadConainter.add(labelDetails);
