@@ -32,7 +32,7 @@ public class ServiceOffre {
     //initilisation connection request 
     private ConnectionRequest req;
     
-    private ServiceOffre() {
+    public ServiceOffre() {
          req = new ConnectionRequest();
     }
     public static ServiceOffre getInstance() {
@@ -180,4 +180,18 @@ public class ServiceOffre {
     }
       */
 
+    public ArrayList<Offre> triOffreByReductionA() {
+        String url = Statics.BASE_URL + "/offre/listOffreByReductionAjson"; // Add Symfony URL Here
+        req.setUrl(url);
+        req.setPost(false);
+        req.addResponseListener(new ActionListener<NetworkEvent>() {
+            @Override
+            public void actionPerformed(NetworkEvent evt) {
+                offres = parseOffres(new String(req.getResponseData()));
+                req.removeResponseListener(this);
+            }
+        });
+        NetworkManager.getInstance().addToQueueAndWait(req);
+        return offres;
+    }
 }

@@ -63,7 +63,7 @@ public class ListOffreForm extends  Form {
         tempForm.setTitle("Offres");
         tempForm.setLayout(new BoxLayout(BoxLayout.Y_AXIS));
         tempForm.setTransitionOutAnimator(CommonTransitions.createEmpty());
-        GridLayout gridLayout = new GridLayout(1, 12);
+        GridLayout gridLayout = new GridLayout(1, 10);
        // gridLayout.setHgap(25);
 
          Font fnt = Font.createSystemFont(Font.FACE_SYSTEM, Font.STYLE_BOLD, Font.SIZE_SMALL);
@@ -78,6 +78,7 @@ public class ListOffreForm extends  Form {
         
         Label labelSupprimer = new Label("Supprimer");
         Label labelModifier = new Label("Modifier");
+        Label labelTri = new Label("tri");
         //Label labelDetails = new Label("Details");
         
         Container HeadConainter = new Container(gridLayout);
@@ -88,11 +89,11 @@ public class ListOffreForm extends  Form {
         HeadConainter.add(labelprix_offre);
         HeadConainter.add(labelreduction);
         HeadConainter.add(labeldate_debut_offre);
-        HeadConainter.add(labeldate_fin_offre);
+        HeadConainter.add(labelTri);
         
-       
-       /* HeadConainter.add(labelSupprimer);
-        HeadConainter.add(labelModifier);*/
+        HeadConainter.add(labeldate_fin_offre);
+        HeadConainter.add("");
+        HeadConainter.add("");
         //HeadConainter.add(labelDetails);
         
         tempForm.add(HeadConainter);
@@ -153,6 +154,9 @@ public class ListOffreForm extends  Form {
                 new DetailOffreForm(o).show();
             });
             */
+           
+           
+           
             Container BodyConainter = new Container(gridLayout);
              
                     
@@ -175,6 +179,7 @@ public class ListOffreForm extends  Form {
 
             BodyConainter.add(lSupprimer);
             BodyConainter.add(lModifier);
+       
            // BodyConainter.add(lDetails);
             tempForm.add(BodyConainter);
 
@@ -217,7 +222,7 @@ public class ListOffreForm extends  Form {
                         Label label8 = (Label) mb.getComponentAt(7);
                         String line8 = label8.getText();
                         
-                       /* Label label9 = (Label) mb.getComponentAt(8);
+                        /*Label label9 = (Label) mb.getComponentAt(8);
                         String line9 = label9.getText();
                         /*Label label10 = (Label) mb.getComponentAt(9);
                         String line10 = label10.getText();
@@ -231,7 +236,7 @@ public class ListOffreForm extends  Form {
                                 || line6 != null && line6.toLowerCase().indexOf(text) > -1
                                 || line7 != null && line7.toLowerCase().indexOf(text) > -1
                                 || line8 != null && line8.toLowerCase().indexOf(text) > -1;
-                              //  || line9 != null && line9.toLowerCase().indexOf(text) > -1
+                               // || line9 != null && line9.toLowerCase().indexOf(text) > -1;
                                /* || line10 != null && line10.toLowerCase().indexOf(text) > -1
                                 || line11 != null && line11.toLowerCase().indexOf(text) > -1;*/
                         mb.setHidden(!show);
@@ -240,9 +245,9 @@ public class ListOffreForm extends  Form {
                 }
                 tempForm.getContentPane().animateLayout(150);
             }
-        }, 4);
+        }, 9);
 
-        Button Comment = new Button("ajouter Billet");
+        Button Comment = new Button("ajouter offre");
         Comment.addActionListener(e -> new AjoutOffreForm());
         tempForm.show();
         tempForm.setTransitionOutAnimator(CommonTransitions.createSlide(CommonTransitions.SLIDE_HORIZONTAL, false, 250));
@@ -251,7 +256,8 @@ public class ListOffreForm extends  Form {
         return tempForm;
 
     }
-
+//Button btntriOffreByReductionA = new Button("Ordered By Date");
+ //btntriOffreByReductionA.addActionListener(e-> new triOffreByReductionAForm());
     private static class datePicker {
 
         public datePicker() {

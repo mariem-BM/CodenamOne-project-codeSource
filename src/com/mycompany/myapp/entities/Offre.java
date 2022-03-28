@@ -5,6 +5,7 @@
  */
 package com.mycompany.myapp.entities;
 
+import java.util.Comparator;
 import java.util.Date;
 
 /**
@@ -114,6 +115,11 @@ public class Offre {
         return "Offre{" + "id=" + id + ", nom_offre=" + nom_offre + ", description_offre=" + description_offre + ", prix_offre=" + prix_offre + ", reduction=" + reduction + ", date_debut_offre=" + date_debut_offre + ", date_fin_offre=" + date_fin_offre + '}';
     }
     
-    
+   public static Comparator<Offre> triOffreDateDebutA = new Comparator<Offre>() {
+        @Override
+        public int compare(Offre o1, Offre o2) {
+            return (int) (o1.getDateDebutOffre().toLowerCase().compareTo(o2.getDateDebutOffre().toLowerCase()));
+        }
+    };  
     
 }

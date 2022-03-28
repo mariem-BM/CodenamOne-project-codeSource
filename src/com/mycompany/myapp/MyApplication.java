@@ -53,8 +53,8 @@ public class MyApplication {
             current.show();
             return;
         }
-      //new LoginForm(theme).show();
-      new StatistiquePieForm(theme).show();
+      new LoginForm(theme).show();
+    //  new StatistiquePieForm(theme).show();
   //new AjoutReclamForm(theme).show();
     }
 

@@ -66,7 +66,7 @@ public class ListReclamForm extends Form {
         tempForm.setTitle("Reclamations");
         tempForm.setLayout(new BoxLayout(BoxLayout.Y_AXIS));
         tempForm.setTransitionOutAnimator(CommonTransitions.createEmpty());
-        GridLayout gridLayout = new GridLayout(1, 10);
+        GridLayout gridLayout = new GridLayout(1, 6);
        // gridLayout.setHgap(25);
 
          Font fnt = Font.createSystemFont(Font.FACE_SYSTEM, Font.STYLE_BOLD, Font.SIZE_MEDIUM);
@@ -238,7 +238,7 @@ public class ListReclamForm extends Form {
                 }
                 tempForm.getContentPane().animateLayout(150);
             }
-        }, 4);
+        }, 6);
 
         Button Comment = new Button("réclamer");
         Comment.addActionListener(e -> new AjoutReclamForm());

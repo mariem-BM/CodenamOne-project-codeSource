@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<component type="Form" name="reclamFormchange" cloudDestinationProperty="reclamFormchange" layout="BoxLayout" boxLayoutAxis="Y" >
+  <component type="TextField" name="tfdescription_reclam" cloudBoundProperty="text" cloudDestinationProperty="TextField" text="" hint="description relam" >
+  </component>
+  <component type="Picker" name="date" cloudDestinationProperty="Picker" text="28/03/22" >
+  </component>
+  <component type="CheckBox" name="envoye" cloudDestinationProperty="CheckBox" text="envoy&#xe9;" >
+    <custom name="maskName" type="java.lang.String" value="[null]" />
+  </component>
+  <component type="CheckBox" name="traite" cloudDestinationProperty="CheckBox1" text="trait&#xe9;" >
+  </component>
+  <component type="Button" name="ajout" cloudDestinationProperty="Button" text="ajouter reclam" >
+  </component>
+</component>

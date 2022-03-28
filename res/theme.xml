@@ -7,6 +7,7 @@
     <image name="gradient-overlay.png"  />
     <image name="login-background.jpg"  />
     <image name="notes.png" type="multi"  />
+    <ui name="reclamFormchange" />
     <image name="round-mask.png" type="multi"  />
     <image name="selected-walkthru.png" type="multi"  />
     <image name="sidemenu-top.png" type="multi"  />
